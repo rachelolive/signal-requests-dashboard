@@ -1,17 +1,53 @@
 {
-  "last_synced": "2026-03-23T00:00:00Z",
+  "last_synced": "2026-03-23T21:11:35Z",
   "categories": [
     {
       "id": "risk",
       "name": "Risk product",
       "color": "#993C1D",
       "requests": [
-        {"date":"2025-03-13","author":"Zach Watson","channel":"aes-global","text":"Does anyone have a discovery call for Risk I can listen to?","url":"https://signalhq.slack.com/archives/C081H6A0CVC/p1741896142393809"},
-        {"date":"2025-04-08","author":"Jacob Chalfin","channel":"aes-global","text":"Does anyone have an example of a due diligence risk/vendor risk report we've produced? Or at least a sample for prospects?","url":"https://signalhq.slack.com/archives/C081H6A0CVC/p1744124643773189"},
-        {"date":"2025-04-08","author":"Jo","channel":"aes-global","text":"Does anyone have a shareable link to the risk intro video from this LinkedIn post, so I can link it in an email without going via LinkedIn?","url":"https://signalhq.slack.com/archives/C081H6A0CVC/p1744115287574859"},
-        {"date":"2025-05-16","author":"Zach Watson","channel":"aes-global","text":"Hello team — does anyone have a risk dashboard proposal they are proud of?","url":"https://signalhq.slack.com/archives/C081H6A0CVC/p1747418968281699"},
-        {"date":"2025-07-30","author":"Luize Lazdane","channel":"commercial-global","text":"L&G have asked to speak to someone who already takes our risk offering — any suggestions for who to put forward?","url":"https://signalhq.slack.com/archives/C04P01H413R/p1753875871416919"},
-        {"date":"2025-03-27","author":"Hannah Hart","channel":"commercial-global","text":"Does anyone have an email template they sent to a customer asking to be intro'd to their risk team?","url":"https://signalhq.slack.com/archives/C04P01H413R/p1743083658866579"}
+        {
+          "date": "2025-03-13",
+          "author": "Zach Watson",
+          "channel": "aes-global",
+          "text": "Does anyone have a discovery call for Risk I can listen to?",
+          "url": "https://signalhq.slack.com/archives/C081H6A0CVC/p1741896142393809"
+        },
+        {
+          "date": "2025-04-08",
+          "author": "Jacob Chalfin",
+          "channel": "aes-global",
+          "text": "Does anyone have an example of a due diligence risk/vendor risk report we've produced? Or at least a sample for prospects?",
+          "url": "https://signalhq.slack.com/archives/C081H6A0CVC/p1744124643773189"
+        },
+        {
+          "date": "2025-04-08",
+          "author": "Jo",
+          "channel": "aes-global",
+          "text": "Does anyone have a shareable link to the risk intro video from this LinkedIn post, so I can link it in an email without going via LinkedIn?",
+          "url": "https://signalhq.slack.com/archives/C081H6A0CVC/p1744115287574859"
+        },
+        {
+          "date": "2025-05-16",
+          "author": "Zach Watson",
+          "channel": "aes-global",
+          "text": "Hello team \u2014 does anyone have a risk dashboard proposal they are proud of?",
+          "url": "https://signalhq.slack.com/archives/C081H6A0CVC/p1747418968281699"
+        },
+        {
+          "date": "2025-07-30",
+          "author": "Luize Lazdane",
+          "channel": "commercial-global",
+          "text": "L&G have asked to speak to someone who already takes our risk offering \u2014 any suggestions for who to put forward?",
+          "url": "https://signalhq.slack.com/archives/C04P01H413R/p1753875871416919"
+        },
+        {
+          "date": "2025-03-27",
+          "author": "Hannah Hart",
+          "channel": "commercial-global",
+          "text": "Does anyone have an email template they sent to a customer asking to be intro'd to their risk team?",
+          "url": "https://signalhq.slack.com/archives/C04P01H413R/p1743083658866579"
+        }
       ]
     },
     {
@@ -19,20 +55,104 @@
       "name": "Sample reports & examples",
       "color": "#0F6E56",
       "requests": [
-        {"date":"2024-11-20","author":"Jo","channel":"aes-global","text":"Anyone got any good examples of ad hoc or post campaign summary style reports?","url":"https://signalhq.slack.com/archives/C081H6A0CVC/p1732122840725779"},
-        {"date":"2024-12-05","author":"RJ Zayas","channel":"aes-global","text":"Does anyone have the PayPal CEO insights?","url":"https://signalhq.slack.com/archives/C081H6A0CVC/p1733417264776469"},
-        {"date":"2025-02-25","author":"RJ Zayas","channel":"aes-global","text":"Does anyone have examples of Social 360 work looking at policy makers globally + spikes/trends in social outlets for key regulation and policy influencers?","url":"https://signalhq.slack.com/archives/C081H6A0CVC/p1740499588457379"},
-        {"date":"2025-03-06","author":"Rich Hope","channel":"aes-global","text":"Does anyone have anything that is insightful from a recent Pharma report?","url":"https://signalhq.slack.com/archives/C081H6A0CVC/p1741289720068009"},
-        {"date":"2025-03-12","author":"Will Price","channel":"aes-global","text":"Hi team, does anyone have some nice looking media impact report examples we can share (white labelled)?","url":"https://signalhq.slack.com/archives/C081H6A0CVC/p1741778134476459"},
-        {"date":"2025-04-09","author":"Rich Hope","channel":"aes-global","text":"Yahoo have requested examples of monthly and quarterly impact reports. Does anyone have examples of two reports?","url":"https://signalhq.slack.com/archives/C081H6A0CVC/p1744233860201689"},
-        {"date":"2025-04-28","author":"Rich Hope","channel":"aes-global","text":"Does anyone have a slide on media impact reports I can use?","url":"https://signalhq.slack.com/archives/C081H6A0CVC/p1745872169312439"},
-        {"date":"2025-04-30","author":"Jo","channel":"aes-global","text":"Does anyone have any examples where clients have mapped website traffic/similar data against media metrics?","url":"https://signalhq.slack.com/archives/C081H6A0CVC/p1746044903228579"},
-        {"date":"2025-06-30","author":"Luize Lazdane","channel":"commercial-global","text":"Does anyone have a recorded call where the in-app risk dashboards were demo'd please? Any stage will do.","url":"https://signalhq.slack.com/archives/C04P01H413R/p1751295280738539"},
-        {"date":"2025-07-16","author":"Zach Watson","channel":"aes-global","text":"Does anyone have any good social reports and/or daily newsletters that weave in social with traditional that I can share externally?","url":"https://signalhq.slack.com/archives/C081H6A0CVC/p1752674496618279"},
-        {"date":"2025-07-25","author":"Frederico Pinto","channel":"commercial-global","text":"Does anyone have a good blinded Social report with engagement metrics I can share with a client?","url":"https://signalhq.slack.com/archives/C04P01H413R/p1753444534003389"},
-        {"date":"2025-07-31","author":"Rich Hope","channel":"aes-global","text":"Does anyone have any solid examples of earnings reports? We have the Airbnb example, but keen to see if there is anything else?","url":"https://signalhq.slack.com/archives/C081H6A0CVC/p1753970117863269"},
-        {"date":"2025-08-06","author":"Zach Watson","channel":"aes-global","text":"S&P global is asking for existing newsletters where we separate the coverage thematically (DEI, private credit, AI, ESG, etc). Does anyone have something like this?","url":"https://signalhq.slack.com/archives/C081H6A0CVC/p1754495623308489"},
-        {"date":"2026-01-14","author":"Amelia Fuell","channel":"commercial-global","text":"Does anyone know what % of the wider social media universe is covered by Premium Social? This is for a £500k RFP with Unilever.","url":"https://signalhq.slack.com/archives/C04P01H413R/p1768412541085439"}
+        {
+          "date": "2024-11-20",
+          "author": "Jo",
+          "channel": "aes-global",
+          "text": "Anyone got any good examples of ad hoc or post campaign summary style reports?",
+          "url": "https://signalhq.slack.com/archives/C081H6A0CVC/p1732122840725779"
+        },
+        {
+          "date": "2024-12-05",
+          "author": "RJ Zayas",
+          "channel": "aes-global",
+          "text": "Does anyone have the PayPal CEO insights?",
+          "url": "https://signalhq.slack.com/archives/C081H6A0CVC/p1733417264776469"
+        },
+        {
+          "date": "2025-02-25",
+          "author": "RJ Zayas",
+          "channel": "aes-global",
+          "text": "Does anyone have examples of Social 360 work looking at policy makers globally + spikes/trends in social outlets for key regulation and policy influencers?",
+          "url": "https://signalhq.slack.com/archives/C081H6A0CVC/p1740499588457379"
+        },
+        {
+          "date": "2025-03-06",
+          "author": "Rich Hope",
+          "channel": "aes-global",
+          "text": "Does anyone have anything that is insightful from a recent Pharma report?",
+          "url": "https://signalhq.slack.com/archives/C081H6A0CVC/p1741289720068009"
+        },
+        {
+          "date": "2025-03-12",
+          "author": "Will Price",
+          "channel": "aes-global",
+          "text": "Hi team, does anyone have some nice looking media impact report examples we can share (white labelled)?",
+          "url": "https://signalhq.slack.com/archives/C081H6A0CVC/p1741778134476459"
+        },
+        {
+          "date": "2025-04-09",
+          "author": "Rich Hope",
+          "channel": "aes-global",
+          "text": "Yahoo have requested examples of monthly and quarterly impact reports. Does anyone have examples of two reports?",
+          "url": "https://signalhq.slack.com/archives/C081H6A0CVC/p1744233860201689"
+        },
+        {
+          "date": "2025-04-28",
+          "author": "Rich Hope",
+          "channel": "aes-global",
+          "text": "Does anyone have a slide on media impact reports I can use?",
+          "url": "https://signalhq.slack.com/archives/C081H6A0CVC/p1745872169312439"
+        },
+        {
+          "date": "2025-04-30",
+          "author": "Jo",
+          "channel": "aes-global",
+          "text": "Does anyone have any examples where clients have mapped website traffic/similar data against media metrics?",
+          "url": "https://signalhq.slack.com/archives/C081H6A0CVC/p1746044903228579"
+        },
+        {
+          "date": "2025-06-30",
+          "author": "Luize Lazdane",
+          "channel": "commercial-global",
+          "text": "Does anyone have a recorded call where the in-app risk dashboards were demo'd please? Any stage will do.",
+          "url": "https://signalhq.slack.com/archives/C04P01H413R/p1751295280738539"
+        },
+        {
+          "date": "2025-07-16",
+          "author": "Zach Watson",
+          "channel": "aes-global",
+          "text": "Does anyone have any good social reports and/or daily newsletters that weave in social with traditional that I can share externally?",
+          "url": "https://signalhq.slack.com/archives/C081H6A0CVC/p1752674496618279"
+        },
+        {
+          "date": "2025-07-25",
+          "author": "Frederico Pinto",
+          "channel": "commercial-global",
+          "text": "Does anyone have a good blinded Social report with engagement metrics I can share with a client?",
+          "url": "https://signalhq.slack.com/archives/C04P01H413R/p1753444534003389"
+        },
+        {
+          "date": "2025-07-31",
+          "author": "Rich Hope",
+          "channel": "aes-global",
+          "text": "Does anyone have any solid examples of earnings reports? We have the Airbnb example, but keen to see if there is anything else?",
+          "url": "https://signalhq.slack.com/archives/C081H6A0CVC/p1753970117863269"
+        },
+        {
+          "date": "2025-08-06",
+          "author": "Zach Watson",
+          "channel": "aes-global",
+          "text": "S&P global is asking for existing newsletters where we separate the coverage thematically (DEI, private credit, AI, ESG, etc). Does anyone have something like this?",
+          "url": "https://signalhq.slack.com/archives/C081H6A0CVC/p1754495623308489"
+        },
+        {
+          "date": "2026-01-14",
+          "author": "Amelia Fuell",
+          "channel": "commercial-global",
+          "text": "Does anyone know what % of the wider social media universe is covered by Premium Social? This is for a \u00a3500k RFP with Unilever.",
+          "url": "https://signalhq.slack.com/archives/C04P01H413R/p1768412541085439"
+        }
       ]
     },
     {
@@ -40,21 +160,111 @@
       "name": "Sales collateral & decks",
       "color": "#185FA5",
       "requests": [
-        {"date":"2024-01-08","author":"Will Phillips","channel":"commercial-global","text":"Please could the Buyer Pack be updated to include our new address?","url":"https://signalhq.slack.com/archives/C04P01H413R/p1704734044297029"},
-        {"date":"2024-01-30","author":"Jo","channel":"commercial-global","text":"Does anyone have a copy of the standard support brief builder please for new/incoming clients?","url":"https://signalhq.slack.com/archives/C04P01H413R/p1706636718564349"},
-        {"date":"2024-04-17","author":"Jacob Flaxman","channel":"commercial-global","text":"Hi all, does anyone have an up to date version of our buyer pack? The links to the Order Form and Terms aren't working.","url":"https://signalhq.slack.com/archives/C04P01H413R/p1713347128013139"},
-        {"date":"2024-07-09","author":"Mamta Bains","channel":"commercial-global","text":"Does anyone have a template for an organogram that may have been used for a pitch or an RFP?","url":"https://signalhq.slack.com/archives/C04P01H413R/p1720561560040839"},
-        {"date":"2024-07-10","author":"Jacob Chalfin","channel":"commercial-global","text":"Does anyone have a deck that highlights the importance of the CCO role or that validates that CCOs are integral to business success?","url":"https://signalhq.slack.com/archives/C04P01H413R/p1720626284960659"},
-        {"date":"2024-12-13","author":"Rich Hope","channel":"aes-global","text":"I was going through Kodak's Gong presentation to Roblox and came across a template. Does anyone know where I can find these slide templates?","url":"https://signalhq.slack.com/archives/C081H6A0CVC/p1734105313666479"},
-        {"date":"2025-01-20","author":"Rich Hope","channel":"aes-global","text":"Does anyone have the Apple example deck from last week?","url":"https://signalhq.slack.com/archives/C081H6A0CVC/p1737379417461159"},
-        {"date":"2025-02-05","author":"Bailee Mesite","channel":"aes-global","text":"Does anyone have a proposal they can share that includes Rep Reports + Modular Analytics?","url":"https://signalhq.slack.com/archives/C081H6A0CVC/p1738776505701919"},
-        {"date":"2025-02-14","author":"Rich Hope","channel":"aes-global","text":"Does anyone have a proposal for a small opp? webapp only - $30k. Just looking for a template.","url":"https://signalhq.slack.com/archives/C081H6A0CVC/p1739562076985749"},
-        {"date":"2025-03-25","author":"Michael E","channel":"aes-global","text":"Does anyone have the latest and greatest Risk only deck for pitching — I have seen a number of new slides recently but nothing succinct.","url":"https://signalhq.slack.com/archives/C081H6A0CVC/p1742904644464119"},
-        {"date":"2025-06-23","author":"Zach Watson","channel":"aes-global","text":"Does anyone have insight slides for DEI and Washington DC/political landscape?","url":"https://signalhq.slack.com/archives/C081H6A0CVC/p1750700959269069"},
-        {"date":"2025-06-26","author":"Faryn Corey","channel":"aes-global","text":"Does anyone have a good slide/one pager on 'future roadmap'? This one feels a bit outdated now that we have askAIQ and advanced analytics.","url":"https://signalhq.slack.com/archives/C081H6A0CVC/p1750967394598449"},
-        {"date":"2025-07-24","author":"Zach Watson","channel":"aes-global","text":"I don't see any Propel pitch decks in the shared folder. Would love an overview slide or 2 as part of our pitch deck flow.","url":"https://signalhq.slack.com/archives/C081H6A0CVC/p1753369753831009"},
-        {"date":"2025-08-08","author":"Will Price","channel":"aes-global","text":"Hi team, does anyone have any slides outlining Propel's proposition?","url":"https://signalhq.slack.com/archives/C081H6A0CVC/p1754658903486049"},
-        {"date":"2025-10-07","author":"Peter Read","channel":"commercial-global","text":"Does anyone know where I can find our latest product roadmap slides? I have a workshop with an at-risk client.","url":"https://signalhq.slack.com/archives/C04P01H413R/p1759828046001719"}
+        {
+          "date": "2024-01-08",
+          "author": "Will Phillips",
+          "channel": "commercial-global",
+          "text": "Please could the Buyer Pack be updated to include our new address?",
+          "url": "https://signalhq.slack.com/archives/C04P01H413R/p1704734044297029"
+        },
+        {
+          "date": "2024-01-30",
+          "author": "Jo",
+          "channel": "commercial-global",
+          "text": "Does anyone have a copy of the standard support brief builder please for new/incoming clients?",
+          "url": "https://signalhq.slack.com/archives/C04P01H413R/p1706636718564349"
+        },
+        {
+          "date": "2024-04-17",
+          "author": "Jacob Flaxman",
+          "channel": "commercial-global",
+          "text": "Hi all, does anyone have an up to date version of our buyer pack? The links to the Order Form and Terms aren't working.",
+          "url": "https://signalhq.slack.com/archives/C04P01H413R/p1713347128013139"
+        },
+        {
+          "date": "2024-07-09",
+          "author": "Mamta Bains",
+          "channel": "commercial-global",
+          "text": "Does anyone have a template for an organogram that may have been used for a pitch or an RFP?",
+          "url": "https://signalhq.slack.com/archives/C04P01H413R/p1720561560040839"
+        },
+        {
+          "date": "2024-07-10",
+          "author": "Jacob Chalfin",
+          "channel": "commercial-global",
+          "text": "Does anyone have a deck that highlights the importance of the CCO role or that validates that CCOs are integral to business success?",
+          "url": "https://signalhq.slack.com/archives/C04P01H413R/p1720626284960659"
+        },
+        {
+          "date": "2024-12-13",
+          "author": "Rich Hope",
+          "channel": "aes-global",
+          "text": "I was going through Kodak's Gong presentation to Roblox and came across a template. Does anyone know where I can find these slide templates?",
+          "url": "https://signalhq.slack.com/archives/C081H6A0CVC/p1734105313666479"
+        },
+        {
+          "date": "2025-01-20",
+          "author": "Rich Hope",
+          "channel": "aes-global",
+          "text": "Does anyone have the Apple example deck from last week?",
+          "url": "https://signalhq.slack.com/archives/C081H6A0CVC/p1737379417461159"
+        },
+        {
+          "date": "2025-02-05",
+          "author": "Bailee Mesite",
+          "channel": "aes-global",
+          "text": "Does anyone have a proposal they can share that includes Rep Reports + Modular Analytics?",
+          "url": "https://signalhq.slack.com/archives/C081H6A0CVC/p1738776505701919"
+        },
+        {
+          "date": "2025-02-14",
+          "author": "Rich Hope",
+          "channel": "aes-global",
+          "text": "Does anyone have a proposal for a small opp? webapp only - $30k. Just looking for a template.",
+          "url": "https://signalhq.slack.com/archives/C081H6A0CVC/p1739562076985749"
+        },
+        {
+          "date": "2025-03-25",
+          "author": "Michael E",
+          "channel": "aes-global",
+          "text": "Does anyone have the latest and greatest Risk only deck for pitching \u2014 I have seen a number of new slides recently but nothing succinct.",
+          "url": "https://signalhq.slack.com/archives/C081H6A0CVC/p1742904644464119"
+        },
+        {
+          "date": "2025-06-23",
+          "author": "Zach Watson",
+          "channel": "aes-global",
+          "text": "Does anyone have insight slides for DEI and Washington DC/political landscape?",
+          "url": "https://signalhq.slack.com/archives/C081H6A0CVC/p1750700959269069"
+        },
+        {
+          "date": "2025-06-26",
+          "author": "Faryn Corey",
+          "channel": "aes-global",
+          "text": "Does anyone have a good slide/one pager on 'future roadmap'? This one feels a bit outdated now that we have askAIQ and advanced analytics.",
+          "url": "https://signalhq.slack.com/archives/C081H6A0CVC/p1750967394598449"
+        },
+        {
+          "date": "2025-07-24",
+          "author": "Zach Watson",
+          "channel": "aes-global",
+          "text": "I don't see any Propel pitch decks in the shared folder. Would love an overview slide or 2 as part of our pitch deck flow.",
+          "url": "https://signalhq.slack.com/archives/C081H6A0CVC/p1753369753831009"
+        },
+        {
+          "date": "2025-08-08",
+          "author": "Will Price",
+          "channel": "aes-global",
+          "text": "Hi team, does anyone have any slides outlining Propel's proposition?",
+          "url": "https://signalhq.slack.com/archives/C081H6A0CVC/p1754658903486049"
+        },
+        {
+          "date": "2025-10-07",
+          "author": "Peter Read",
+          "channel": "commercial-global",
+          "text": "Does anyone know where I can find our latest product roadmap slides? I have a workshop with an at-risk client.",
+          "url": "https://signalhq.slack.com/archives/C04P01H413R/p1759828046001719"
+        }
       ]
     },
     {
@@ -62,14 +272,62 @@
       "name": "Client references & contacts",
       "color": "#534AB7",
       "requests": [
-        {"date":"2024-01-22","author":"Michael E","channel":"commercial-global","text":"Does anyone have a client who moved to Signal AI from Valona Intelligence/M-Brain? Looking for someone to offer as a reference.","url":"https://signalhq.slack.com/archives/C04P01H413R/p1705922572294219"},
-        {"date":"2024-04-23","author":"Jacob Flaxman","channel":"commercial-global","text":"Can anyone point me in the direction of a hospitality client who gets curated newsletters, please?","url":"https://signalhq.slack.com/archives/C04P01H413R/p1713861169335079"},
-        {"date":"2024-05-01","author":"Jacob Flaxman","channel":"commercial-global","text":"Can anyone let me know any clients we have based in or with significant operations in Israel, please?","url":"https://signalhq.slack.com/archives/C04P01H413R/p1714567691094549"},
-        {"date":"2024-11-13","author":"Rich Hope","channel":"commercial-global","text":"Does anyone have a connection to Apple? Looking for a way in.","url":"https://signalhq.slack.com/archives/C04P01H413R/p1731532452049489"},
-        {"date":"2025-01-09","author":"Rich Hope","channel":"aes-global","text":"Does anyone have a comms contact at Costco? They seem to intentionally hide their comms team from the outside world.","url":"https://signalhq.slack.com/archives/C081H6A0CVC/p1736449339321729"},
-        {"date":"2025-03-27","author":"Hannah Hart","channel":"commercial-global","text":"Does anyone have an email template they sent to a customer asking to be intro'd to their risk team?","url":"https://signalhq.slack.com/archives/C04P01H413R/p1743083658866579"},
-        {"date":"2025-07-30","author":"Luize Lazdane","channel":"commercial-global","text":"L&G have asked to speak to someone who already takes our risk offering — does anyone have good suggestions for who to put forward?","url":"https://signalhq.slack.com/archives/C04P01H413R/p1753875871416919"},
-        {"date":"2026-02-06","author":"Jo","channel":"commercial-global","text":"Anyone know of any customers who have used Public Relay and might be happy to speak to their experience/why Signal is better?","url":"https://signalhq.slack.com/archives/C04P01H413R/p1770401792525559"}
+        {
+          "date": "2024-01-22",
+          "author": "Michael E",
+          "channel": "commercial-global",
+          "text": "Does anyone have a client who moved to Signal AI from Valona Intelligence/M-Brain? Looking for someone to offer as a reference.",
+          "url": "https://signalhq.slack.com/archives/C04P01H413R/p1705922572294219"
+        },
+        {
+          "date": "2024-04-23",
+          "author": "Jacob Flaxman",
+          "channel": "commercial-global",
+          "text": "Can anyone point me in the direction of a hospitality client who gets curated newsletters, please?",
+          "url": "https://signalhq.slack.com/archives/C04P01H413R/p1713861169335079"
+        },
+        {
+          "date": "2024-05-01",
+          "author": "Jacob Flaxman",
+          "channel": "commercial-global",
+          "text": "Can anyone let me know any clients we have based in or with significant operations in Israel, please?",
+          "url": "https://signalhq.slack.com/archives/C04P01H413R/p1714567691094549"
+        },
+        {
+          "date": "2024-11-13",
+          "author": "Rich Hope",
+          "channel": "commercial-global",
+          "text": "Does anyone have a connection to Apple? Looking for a way in.",
+          "url": "https://signalhq.slack.com/archives/C04P01H413R/p1731532452049489"
+        },
+        {
+          "date": "2025-01-09",
+          "author": "Rich Hope",
+          "channel": "aes-global",
+          "text": "Does anyone have a comms contact at Costco? They seem to intentionally hide their comms team from the outside world.",
+          "url": "https://signalhq.slack.com/archives/C081H6A0CVC/p1736449339321729"
+        },
+        {
+          "date": "2025-03-27",
+          "author": "Hannah Hart",
+          "channel": "commercial-global",
+          "text": "Does anyone have an email template they sent to a customer asking to be intro'd to their risk team?",
+          "url": "https://signalhq.slack.com/archives/C04P01H413R/p1743083658866579"
+        },
+        {
+          "date": "2025-07-30",
+          "author": "Luize Lazdane",
+          "channel": "commercial-global",
+          "text": "L&G have asked to speak to someone who already takes our risk offering \u2014 does anyone have good suggestions for who to put forward?",
+          "url": "https://signalhq.slack.com/archives/C04P01H413R/p1753875871416919"
+        },
+        {
+          "date": "2026-02-06",
+          "author": "Jo",
+          "channel": "commercial-global",
+          "text": "Anyone know of any customers who have used Public Relay and might be happy to speak to their experience/why Signal is better?",
+          "url": "https://signalhq.slack.com/archives/C04P01H413R/p1770401792525559"
+        }
       ]
     },
     {
@@ -77,12 +335,48 @@
       "name": "Competitive intelligence",
       "color": "#854F0B",
       "requests": [
-        {"date":"2024-03-07","author":"Michael E","channel":"commercial-global","text":"Does anyone have senior contacts in the comms team at US Bancorp? We got put forward for an RFP and they want to run it through procurement.","url":"https://signalhq.slack.com/archives/C04P01H413R/p1709827638039019"},
-        {"date":"2024-04-09","author":"Jacob Flaxman","channel":"commercial-global","text":"Can anyone help me answer this from Barclays? Either with recent RFP submission docs or similar write-ups provided to clients.","url":"https://signalhq.slack.com/archives/C04P01H413R/p1712685041283269"},
-        {"date":"2025-03-21","author":"Zach Watson","channel":"commercial-global","text":"Anyone know how much Alpha Sense is?","url":"https://signalhq.slack.com/archives/C04P01H413R/p1742580380619929"},
-        {"date":"2025-03-28","author":"RJ Zayas","channel":"aes-global","text":"Does anyone know what types of reporting businesses receive from AlphaSense and Bloomberg Terminal? I have a prospect who oversees IR.","url":"https://signalhq.slack.com/archives/C081H6A0CVC/p1743176384358959"},
-        {"date":"2025-06-03","author":"Tom Denn","channel":"commercial-global","text":"Trying to collect data on wins vs non-comms specific services e.g. Everbridge, Dataminr, Alphasense — does anyone have specific examples?","url":"https://signalhq.slack.com/archives/C04P01H413R/p1748952867006519"},
-        {"date":"2025-06-27","author":"Rich Hope","channel":"aes-global","text":"Does anyone have any decent word/google doc RFI responses for everything we do? Ideally for finance.","url":"https://signalhq.slack.com/archives/C081H6A0CVC/p1751039057187799"}
+        {
+          "date": "2024-03-07",
+          "author": "Michael E",
+          "channel": "commercial-global",
+          "text": "Does anyone have senior contacts in the comms team at US Bancorp? We got put forward for an RFP and they want to run it through procurement.",
+          "url": "https://signalhq.slack.com/archives/C04P01H413R/p1709827638039019"
+        },
+        {
+          "date": "2024-04-09",
+          "author": "Jacob Flaxman",
+          "channel": "commercial-global",
+          "text": "Can anyone help me answer this from Barclays? Either with recent RFP submission docs or similar write-ups provided to clients.",
+          "url": "https://signalhq.slack.com/archives/C04P01H413R/p1712685041283269"
+        },
+        {
+          "date": "2025-03-21",
+          "author": "Zach Watson",
+          "channel": "commercial-global",
+          "text": "Anyone know how much Alpha Sense is?",
+          "url": "https://signalhq.slack.com/archives/C04P01H413R/p1742580380619929"
+        },
+        {
+          "date": "2025-03-28",
+          "author": "RJ Zayas",
+          "channel": "aes-global",
+          "text": "Does anyone know what types of reporting businesses receive from AlphaSense and Bloomberg Terminal? I have a prospect who oversees IR.",
+          "url": "https://signalhq.slack.com/archives/C081H6A0CVC/p1743176384358959"
+        },
+        {
+          "date": "2025-06-03",
+          "author": "Tom Denn",
+          "channel": "commercial-global",
+          "text": "Trying to collect data on wins vs non-comms specific services e.g. Everbridge, Dataminr, Alphasense \u2014 does anyone have specific examples?",
+          "url": "https://signalhq.slack.com/archives/C04P01H413R/p1748952867006519"
+        },
+        {
+          "date": "2025-06-27",
+          "author": "Rich Hope",
+          "channel": "aes-global",
+          "text": "Does anyone have any decent word/google doc RFI responses for everything we do? Ideally for finance.",
+          "url": "https://signalhq.slack.com/archives/C081H6A0CVC/p1751039057187799"
+        }
       ]
     },
     {
@@ -90,7 +384,13 @@
       "name": "Memo",
       "color": "#6B3FA0",
       "requests": [
-        {"date":"2025-08-13","author":"Amelia Fuell","channel":"aes-global","text":"Hi team, does anyone know if Memo cover any UK or global publications or is it just US?","url":"https://signalhq.slack.com/archives/C081H6A0CVC/p1755100338327859"}
+        {
+          "date": "2025-08-13",
+          "author": "Amelia Fuell",
+          "channel": "aes-global",
+          "text": "Hi team, does anyone know if Memo cover any UK or global publications or is it just US?",
+          "url": "https://signalhq.slack.com/archives/C081H6A0CVC/p1755100338327859"
+        }
       ]
     },
     {
@@ -98,16 +398,76 @@
       "name": "Operational & admin",
       "color": "#5F5E5A",
       "requests": [
-        {"date":"2024-11-06","author":"Peter Read","channel":"commercial-global","text":"Does anyone have the Tableau login for the marketplace dashboard please?","url":"https://signalhq.slack.com/archives/C04P01H413R/p1730924141904049"},
-        {"date":"2024-11-22","author":"RJ Zayas","channel":"aes-global","text":"I'm rethinking account mapping. Does anyone have suggestions on how they map accounts, detail important information, and targeting approach?","url":"https://signalhq.slack.com/archives/C081H6A0CVC/p1732296950799829"},
-        {"date":"2024-12-02","author":"Faryn Corey","channel":"commercial-global","text":"Hey team, does anyone have the up to date API framework link (not the modular analytics one)?","url":"https://signalhq.slack.com/archives/C04P01H413R/p1733158462512159"},
-        {"date":"2025-02-06","author":"Rich Hope","channel":"aes-global","text":"Does anyone know the answers to these security questions? Nothing in our security docs.","url":"https://signalhq.slack.com/archives/C081H6A0CVC/p1738861054222669"},
-        {"date":"2025-03-31","author":"Zach Watson","channel":"aes-global","text":"Does anyone have an updated W9 for 2025, or is 2024 ok?","url":"https://signalhq.slack.com/archives/C081H6A0CVC/p1743434139290869"},
-        {"date":"2025-04-14","author":"Rich Hope","channel":"aes-global","text":"Does anyone have a doc with our banking info on it? Deposit information and a point of contact for deposit communications.","url":"https://signalhq.slack.com/archives/C081H6A0CVC/p1744655193674029"},
-        {"date":"2025-05-01","author":"Jo","channel":"aes-global","text":"Does anyone have the pre-sales insights link please?","url":"https://signalhq.slack.com/archives/C081H6A0CVC/p1746116962957029"},
-        {"date":"2025-06-12","author":"Zach Watson","channel":"aes-global","text":"Does anyone have language for a 30 day break clause to an addendum?","url":"https://signalhq.slack.com/archives/C081H6A0CVC/p1749735577567919"},
-        {"date":"2025-06-23","author":"Rich Hope","channel":"aes-global","text":"Does anyone know how to create groups in Gong to speed things up? The workflow from Sales Nav to Apollo to Gong is a massive pain.","url":"https://signalhq.slack.com/archives/C081H6A0CVC/p1750692298641679"},
-        {"date":"2025-08-05","author":"Will Price","channel":"commercial-global","text":"Does anyone know if we have previously signed up to the UNGM (United Nations Global Marketplace) and if so what our UNGM number is?","url":"https://signalhq.slack.com/archives/C04P01H413R/p1754406305209799"}
+        {
+          "date": "2024-11-06",
+          "author": "Peter Read",
+          "channel": "commercial-global",
+          "text": "Does anyone have the Tableau login for the marketplace dashboard please?",
+          "url": "https://signalhq.slack.com/archives/C04P01H413R/p1730924141904049"
+        },
+        {
+          "date": "2024-11-22",
+          "author": "RJ Zayas",
+          "channel": "aes-global",
+          "text": "I'm rethinking account mapping. Does anyone have suggestions on how they map accounts, detail important information, and targeting approach?",
+          "url": "https://signalhq.slack.com/archives/C081H6A0CVC/p1732296950799829"
+        },
+        {
+          "date": "2024-12-02",
+          "author": "Faryn Corey",
+          "channel": "commercial-global",
+          "text": "Hey team, does anyone have the up to date API framework link (not the modular analytics one)?",
+          "url": "https://signalhq.slack.com/archives/C04P01H413R/p1733158462512159"
+        },
+        {
+          "date": "2025-02-06",
+          "author": "Rich Hope",
+          "channel": "aes-global",
+          "text": "Does anyone know the answers to these security questions? Nothing in our security docs.",
+          "url": "https://signalhq.slack.com/archives/C081H6A0CVC/p1738861054222669"
+        },
+        {
+          "date": "2025-03-31",
+          "author": "Zach Watson",
+          "channel": "aes-global",
+          "text": "Does anyone have an updated W9 for 2025, or is 2024 ok?",
+          "url": "https://signalhq.slack.com/archives/C081H6A0CVC/p1743434139290869"
+        },
+        {
+          "date": "2025-04-14",
+          "author": "Rich Hope",
+          "channel": "aes-global",
+          "text": "Does anyone have a doc with our banking info on it? Deposit information and a point of contact for deposit communications.",
+          "url": "https://signalhq.slack.com/archives/C081H6A0CVC/p1744655193674029"
+        },
+        {
+          "date": "2025-05-01",
+          "author": "Jo",
+          "channel": "aes-global",
+          "text": "Does anyone have the pre-sales insights link please?",
+          "url": "https://signalhq.slack.com/archives/C081H6A0CVC/p1746116962957029"
+        },
+        {
+          "date": "2025-06-12",
+          "author": "Zach Watson",
+          "channel": "aes-global",
+          "text": "Does anyone have language for a 30 day break clause to an addendum?",
+          "url": "https://signalhq.slack.com/archives/C081H6A0CVC/p1749735577567919"
+        },
+        {
+          "date": "2025-06-23",
+          "author": "Rich Hope",
+          "channel": "aes-global",
+          "text": "Does anyone know how to create groups in Gong to speed things up? The workflow from Sales Nav to Apollo to Gong is a massive pain.",
+          "url": "https://signalhq.slack.com/archives/C081H6A0CVC/p1750692298641679"
+        },
+        {
+          "date": "2025-08-05",
+          "author": "Will Price",
+          "channel": "commercial-global",
+          "text": "Does anyone know if we have previously signed up to the UNGM (United Nations Global Marketplace) and if so what our UNGM number is?",
+          "url": "https://signalhq.slack.com/archives/C04P01H413R/p1754406305209799"
+        }
       ]
     }
   ]
