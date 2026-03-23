@@ -36,6 +36,61 @@ CHANNELS = {
 FEEDBACK_CHANNEL_ID = "CKZELQY5T"
 FEEDBACK_CHANNEL_NAME = "customer-feedback"
 
+# Feedback categories — order matters (first match wins)
+FEEDBACK_CATEGORIES = [
+    {
+        "id": "positive",
+        "name": "Positive feedback",
+        "color": "#1D9E75",
+        "keywords": ["positive feedback", "great feedback", "love the", "really happy", "very happy", "pleased", "impressed", "excellent", "fantastic", "brilliant", "amazing", "love it", "works well", "really good"],
+    },
+    {
+        "id": "askaiq",
+        "name": "AI & AskAIQ",
+        "color": "#534AB7",
+        "keywords": ["askaiq", "ask aiq", "ask aiق", "ai ", "agentic", "topic analysis", "theme landscape", "scheduled thread", "rag alert"],
+    },
+    {
+        "id": "content",
+        "name": "Content & sources",
+        "color": "#854F0B",
+        "keywords": ["source", "coverage", "missing", "scraping", "paywall", "archive", "translation", "language", "publication", "content", "article", "provider", "opoint", "nla", "tveyes", "broadcast", "social media", "tiktok", "premium social", "china", "apac", "japan"],
+    },
+    {
+        "id": "search",
+        "name": "Search & filters",
+        "color": "#185FA5",
+        "keywords": ["search", "filter", "keyword", "query", "boolean", "feeder", "exclusion", "entity", "sentiment", "reading list", "folder", "tag"],
+    },
+    {
+        "id": "alerts",
+        "name": "Alerts & bulletins",
+        "color": "#0F6E56",
+        "keywords": ["bulletin", "alert", "notification", "email", "newsletter", "byoc", "rss", "slack channel"],
+    },
+    {
+        "id": "exports",
+        "name": "Exports & reporting",
+        "color": "#993C1D",
+        "keywords": ["download", "export", "csv", "excel", "report", "pdf", "chart", "graph", "dashboard", "reach", "data quality"],
+    },
+    {
+        "id": "admin",
+        "name": "Admin & permissions",
+        "color": "#5F5E5A",
+        "keywords": ["user", "workspace", "permission", "seat", "login", "newsadmin", "account", "merge", "admin", "lock", "change log", "ip address"],
+    },
+]
+
+
+def classify_feedback(text: str) -> str:
+    """Return the feedback category id for a message."""
+    t = text.lower()
+    for cat in FEEDBACK_CATEGORIES:
+        if any(kw in t for kw in cat["keywords"]):
+            return cat["id"]
+    return "search"  # fallback to search & filters
+
 # Keywords that indicate an information request
 REQUEST_PATTERNS = [
     r"\bdoes anyone\b",
@@ -250,6 +305,7 @@ def fetch_feedback(client: WebClient, channel_id: str, oldest_ts: str) -> list[d
                 "author": author,
                 "text": text[:600],
                 "url": permalink,
+                "category": classify_feedback(text),
             })
 
         if not resp.get("has_more"):
@@ -264,7 +320,12 @@ def fetch_feedback(client: WebClient, channel_id: str, oldest_ts: str) -> list[d
 def load_feedback(path: Path) -> dict:
     if path.exists():
         with open(path) as f:
-            return json.load(f)
+            data = json.load(f)
+        # Backfill category field on existing messages that don't have one
+        for msg in data.get("messages", []):
+            if "category" not in msg:
+                msg["category"] = classify_feedback(msg["text"])
+        return data
     return {"last_synced": "2024-01-01T00:00:00Z", "messages": []}
 
 
