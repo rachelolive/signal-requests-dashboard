@@ -374,6 +374,15 @@
     <span class="feedback-count" id="feedback-count">Loading…</span>
     <input class="feedback-search" id="feedback-search" type="text" placeholder="Search feedback…" />
   </div>
+
+  <div class="chart-wrap" style="margin-bottom:1.25rem">
+    <div class="chart-header">
+      <span class="chart-title">Feedback over time</span>
+      <div class="legend" id="feedback-legend"></div>
+    </div>
+    <div style="position:relative;width:100%;height:200px"><canvas id="fbChart"></canvas></div>
+  </div>
+
   <div id="feedback-cats" style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:1.25rem;"></div>
   <div class="feedback-list" id="feedback-list">
     <div class="feedback-empty">Loading feedback…</div>
@@ -740,6 +749,77 @@ const FEEDBACK_CATEGORIES = [
   { id: 'admin',     name: 'Admin & permissions',  color: '#5F5E5A' },
 ];
 
+let fbChart = null;
+
+function buildFeedbackTimeline(messages) {
+  const counts = {};
+  messages.forEach(m => {
+    const key = m.date.slice(0, 7);
+    if (!counts[key]) counts[key] = {};
+    counts[key][m.category] = (counts[key][m.category] || 0) + 1;
+  });
+
+  const sorted = Object.keys(counts).sort();
+  if (!sorted.length) return { labels: [], keys: [], datasets: [] };
+
+  const [sy, sm] = sorted[0].split('-').map(Number);
+  const [ey, em] = sorted[sorted.length - 1].split('-').map(Number);
+  const moNames = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  const labels = [], keys = [];
+  let y = sy, m = sm;
+  while (y < ey || (y === ey && m <= em)) {
+    const key = `${y}-${String(m).padStart(2,'0')}`;
+    labels.push(moNames[m - 1] + ' ' + String(y).slice(2));
+    keys.push(key);
+    if (m === 12) { y++; m = 1; } else m++;
+  }
+
+  const datasets = FEEDBACK_CATEGORIES.map(cat => ({
+    label: cat.name,
+    data: keys.map(k => counts[k]?.[cat.id] || 0),
+    backgroundColor: cat.color,
+    stack: 's',
+  }));
+
+  return { labels, keys, datasets };
+}
+
+function renderFeedbackChart(messages) {
+  const { labels, keys, datasets } = buildFeedbackTimeline(messages);
+  if (!labels.length) return;
+
+  // Legend
+  document.getElementById('feedback-legend').innerHTML = FEEDBACK_CATEGORIES.map(cat =>
+    `<span><i class="legend-dot" style="background:${cat.color}"></i>${cat.name}</span>`
+  ).join('');
+
+  if (fbChart) fbChart.destroy();
+  fbChart = new Chart(document.getElementById('fbChart'), {
+    type: 'bar',
+    data: { labels, datasets },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: false }, tooltip: { mode: 'index', intersect: false } },
+      scales: {
+        x: { stacked: true, grid: { display: false }, ticks: { font: { size: 10 }, maxRotation: 45, autoSkip: true, maxTicksLimit: 16 } },
+        y: { stacked: true, beginAtZero: true, grid: { color: 'rgba(128,128,128,0.1)' }, ticks: { stepSize: 5, font: { size: 10 } } }
+      },
+      onClick(evt, elements) {
+        if (!elements.length) return;
+        const monthKey = keys[elements[0].index];
+        const monthLabel = labels[elements[0].index];
+        activeFeedbackCat = null;
+        document.querySelectorAll('.cat-filter-btn').forEach(b => b.style.boxShadow = 'none');
+        const filtered = allFeedback.filter(m => m.date.startsWith(monthKey));
+        document.getElementById('feedback-count').textContent =
+          monthLabel + ' — ' + filtered.length + ' message' + (filtered.length !== 1 ? 's' : '');
+        renderFeedback(filtered);
+      },
+      onHover(evt) { evt.native.target.style.cursor = 'pointer'; }
+    }
+  });
+}
+
 async function loadFeedback() {
   feedbackLoaded = true;
   try {
@@ -747,6 +827,7 @@ async function loadFeedback() {
     if (!res.ok) throw new Error('no file');
     const data = await res.json();
     allFeedback = data.messages || [];
+    renderFeedbackChart(allFeedback);
     renderFeedbackCats();
     renderFeedback(allFeedback);
   } catch {
