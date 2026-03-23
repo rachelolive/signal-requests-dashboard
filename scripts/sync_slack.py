@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-sync_slack.py — Fetches new info requests from #commercial-global and #aes-global
+sync_slack.py — Fetches new info requests from #commercial-global, #aes-global and #success
 and writes them into data/requests.json.
 
 Usage:
@@ -58,7 +58,7 @@ CATEGORIES = [
         "id": "samples",
         "name": "Sample reports & examples",
         "color": "#0F6E56",
-        "keywords": ["report", "example", "newsletter", "insight", "earnings", "campaign", "social report", "pharma"],
+        "keywords": ["report", "example", "newsletter", "insight", "earnings", "campaign", "social report", "pharma", "monitor", "version", "today's"],
     },
     {
         "id": "sales",
@@ -120,6 +120,15 @@ def save(path: Path, data: dict):
     print(f"Saved {path}")
 
 
+def channel_has_existing_messages(data: dict, channel_name: str) -> bool:
+    """Return True if we already have any messages from this channel."""
+    return any(
+        r["channel"] == channel_name
+        for cat in data["categories"]
+        for r in cat["requests"]
+    )
+
+
 def fetch_channel(client: WebClient, channel_id: str, channel_name: str, oldest_ts: str) -> list[dict]:
     """Fetch all messages newer than oldest_ts that match request patterns."""
     found = []
@@ -177,7 +186,6 @@ def fetch_channel(client: WebClient, channel_id: str, channel_name: str, oldest_
 
 def merge(data: dict, new_messages: list[dict]) -> int:
     """Merge new messages into data, deduplicating by URL. Returns count added."""
-    # Build set of existing URLs
     existing_urls = {
         r["url"]
         for cat in data["categories"]
@@ -208,13 +216,20 @@ def main():
     data_path = Path(__file__).parent.parent / "data" / "requests.json"
     data = load_existing(data_path)
 
-    # Fetch from last synced timestamp
     last_sync_dt = datetime.fromisoformat(data["last_synced"].replace("Z", "+00:00"))
-    oldest_ts = str(last_sync_dt.timestamp())
+    incremental_ts = str(last_sync_dt.timestamp())
 
-    print(f"Fetching messages since {data['last_synced']}...")
     all_new = []
     for channel_id, channel_name in CHANNELS.items():
+        # If we have no messages from this channel yet, fetch ALL history
+        # Otherwise just fetch since last sync (incremental)
+        if not channel_has_existing_messages(data, channel_name):
+            print(f"New channel #{channel_name} — fetching full history...")
+            oldest_ts = "0"
+        else:
+            print(f"#{channel_name} — fetching since {data['last_synced']}...")
+            oldest_ts = incremental_ts
+
         msgs = fetch_channel(client, channel_id, channel_name, oldest_ts)
         all_new.extend(msgs)
 
