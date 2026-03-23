@@ -1,5 +1,5 @@
 {
-  "last_synced": "2026-03-23T21:25:07Z",
+  "last_synced": "2026-03-23T21:30:01Z",
   "categories": [
     {
       "id": "risk",
@@ -152,6 +152,181 @@
           "channel": "commercial-global",
           "text": "Does anyone know what % of the wider social media universe is covered by Premium Social? This is for a \u00a3500k RFP with Unilever.",
           "url": "https://signalhq.slack.com/archives/C04P01H413R/p1768412541085439"
+        },
+        {
+          "date": "2026-03-13",
+          "author": "Lea Tumale",
+          "channel": "success",
+          "text": "Hi Guys, please can someone share today's version of the Iran Conflict Monitor in this channel? Thank you!",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1773401675929019"
+        },
+        {
+          "date": "2025-11-06",
+          "author": "Anwen Evans",
+          "channel": "success",
+          "text": "Asking a favour again, can anyone please ping me some briefs for Media Impact Reports which include categories and instructions for manual tagging of articles? Thank you! (Enterprise ideally!)",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1762437219260129"
+        },
+        {
+          "date": "2025-10-17",
+          "author": "Steph Morris",
+          "channel": "success",
+          "text": "Unusual request: Do we have any *referenceable*  financial institutions/ Banks that have issues receiving alerts/bulletins/newsletters and we have resolved those issues? Either via whitetelisting or some other process?\n\nIF not referenceable, I am still interested in knowing what was done as I have a highly regulated customer who is experiencing internal pushback and their IT team would feel more c",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1760710190163219"
+        },
+        {
+          "date": "2025-07-07",
+          "author": "Jacob Chalfin",
+          "channel": "success",
+          "text": "Hi Team\u2026hope you don\u2019t mind if I crash the success channel for a short ask - I have an upcoming meeting with a prospect that, as part of their measurement requirements, needs to report on their PR efforts across different geographic markets.\n\nI am trying to demonstrate how we\u2019ve been able to do this through media impact and/or Kelp reporting - does anyone here have an example of a report we\u2019ve pro",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1751901594100309"
+        },
+        {
+          "date": "2025-05-29",
+          "author": "Thomas Carey",
+          "channel": "success",
+          "text": "Do we have any clients that are in Government Services / Defence that take reports?",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1748514951152619"
+        },
+        {
+          "date": "2023-04-13",
+          "author": "Fabian Cornwell",
+          "channel": "success",
+          "text": "Hey everyone, we\u2019re looking into improving the reports feature and have already spoken to a few clients who are using it.\n\nWe\u2019re now looking for recommendations for users that have a lot of frustrations with the feature or users that have tried it but don\u2019t use it.\n\nIf you could leave their emails in the thread below that would be amazing",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1681375837325929"
+        },
+        {
+          "date": "2022-08-05",
+          "author": "Hannah Hart",
+          "channel": "success",
+          "text": "Our september webinar is partnership with Commetric and will be discussing:\n\u2022 A five step plan to avoid greenwashing\n\u2022 How to use data to understand ESG perception\n\u2022 The myriad of challenges when communicating on ESG\n\u2022 How to approach new ESG reporting and COP27\n*Do we have any clients that may be interested in joining the discussion?* :pray::skin-tone-3:",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1659694540547489"
+        },
+        {
+          "date": "2021-04-06",
+          "author": "Rosie Crouch",
+          "channel": "success",
+          "text": "Hi Team, does anyone have an example of a report that includes social media monitoring that can be shared pretty please? Client knows signal doesn\u2019t do it but was interested in the possibility of twitter via our consulting options",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1617722896008200"
+        },
+        {
+          "date": "2021-03-31",
+          "author": "Anwen Evans",
+          "channel": "success",
+          "text": "hey guys, does anyone have any great examples of handover emails from Sales &gt; Success? If so, please forward to John Fox and I, no context necessary :slightly_smiling_face: (working on a template draft) :heart:",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1617196020003000"
+        },
+        {
+          "date": "2021-02-09",
+          "author": "Siyaam Zakriya",
+          "channel": "success",
+          "text": "\u2022 Products disappear after I hit create renewal quote\nCan someone let me know when they are quoting a renewal so I can see this happen? This has been reported a lot but i've never actually seen what happens so it would be useful to see in action",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1612864553011700"
+        },
+        {
+          "date": "2021-01-13",
+          "author": "Joanna Cresswell",
+          "channel": "success",
+          "text": "hey guys! does anyone have any blurb on mobile app pros/cons vs curated newsletter especially please?",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1610540593010900"
+        },
+        {
+          "date": "2020-12-15",
+          "author": "Jeff Pole",
+          "channel": "success",
+          "text": "Thanks for sharing the example of Skadden, Alex. Does anyone have similar examples from other clients, where a selection of users prefer alerts clustering off but others want it on?",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1608021051001400"
+        },
+        {
+          "date": "2020-05-05",
+          "author": "James Brill",
+          "channel": "success",
+          "text": "Hi <!here>,\n\nAs you may know, the monitor team is experimenting with anomalies via in-app recommendations. I know many of you requested to have this enabled, and we will do it very soon (hopefully this week). Thanks very much for providing feedback at the monitor/success meeting!\n\n\nIn the meantime, we have been investigating quick improvements we can make to the UX.\n\nWould anyone have a spare 15 m",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1588688966006800"
+        },
+        {
+          "date": "2020-04-30",
+          "author": "Neil Morrison",
+          "channel": "success",
+          "text": "Morning success team! Does anyone use a very defined list of international news titles for their clients bulletins? Mamta and I are setting up the PIF newsletter and the Signal Top 50 Global is too broad. I'm looking for a list with 10-12 titles max. Thank you",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1588242075020000"
+        },
+        {
+          "date": "2020-04-15",
+          "author": "Luize Lazdane",
+          "channel": "success",
+          "text": "Has anyone got any good searches (or any at all) set up for monitoring when publishers cease publications?",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1586947176001300"
+        },
+        {
+          "date": "2020-03-30",
+          "author": "Luize Lazdane",
+          "channel": "success",
+          "text": "Does anyone know how many sources Signal monitors?",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1585557081000400"
+        },
+        {
+          "date": "2019-10-03",
+          "author": "Benji Gavron",
+          "channel": "success",
+          "text": "Hi team, does anyone have an example of a commetric brief document used to direct daily breifings service?",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1570113356000600"
+        },
+        {
+          "date": "2019-09-24",
+          "author": "Luize Lazdane",
+          "channel": "success",
+          "text": "So tricky question - does anyone know if we are able to monitor the PDF versions of smaller publications that they only list on their website? So to view the article you have to go into the PDF.. It'd mainly be small titles like regionals or trade",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1569321821002800"
+        },
+        {
+          "date": "2019-08-21",
+          "author": "Isaac Eleini",
+          "channel": "success",
+          "text": "Does anyone mind sharing client examples and/or have someone in mind that they could speak to.",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1566376664001800"
+        },
+        {
+          "date": "2019-08-02",
+          "author": "Mohamed Saeed",
+          "channel": "success",
+          "text": "<!here> does anyone have a non sensitive sample report which has key journalists key publications themes etc. I have the dummy one from Anwer but just checking if there are other examples",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1564748187009300"
+        },
+        {
+          "date": "2019-07-18",
+          "author": "Daniel Bowman",
+          "channel": "success",
+          "text": "Thanks - slightly annoying to ask but do we have any shorter ones. Conscious that HL one is closer to a textbook than a report",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1563440294003200"
+        },
+        {
+          "date": "2019-07-01",
+          "author": "Isaac Eleini",
+          "channel": "success",
+          "text": "Does anyone have an example of a client report that uses Signal\u2019s Insights graphs?",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1561985935001200"
+        },
+        {
+          "date": "2019-06-25",
+          "author": "Isaac Eleini",
+          "channel": "success",
+          "text": "Does anyone have the latest version of the breakfast invite please?",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1561476845000400"
+        },
+        {
+          "date": "2019-05-23",
+          "author": "Benji Gavron",
+          "channel": "success",
+          "text": "anyone know who would be the best 3 examples to give. Cant think of any financial clients who take analysis off the top of my head",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1558614994003800"
+        },
+        {
+          "date": "2019-05-14",
+          "author": "Isaac Eleini",
+          "channel": "success",
+          "text": "Can someone please give me the monitor teams emails",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1557839330000700"
         }
       ]
     },
@@ -264,6 +439,69 @@
           "channel": "commercial-global",
           "text": "Does anyone know where I can find our latest product roadmap slides? I have a workshop with an at-risk client.",
           "url": "https://signalhq.slack.com/archives/C04P01H413R/p1759828046001719"
+        },
+        {
+          "date": "2025-10-07",
+          "author": "Jake Nelson",
+          "channel": "success",
+          "text": "Does anyone here have a couple good content slides for paywall access and some of our premium content partnerships?",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1759859175435719"
+        },
+        {
+          "date": "2025-01-06",
+          "author": "Conor Gorman",
+          "channel": "success",
+          "text": "Hi all, we are working with a client (Nectar) who has LexisNexis but not NewsEdge. Does anyone in Sales or CS have a good slide/info on titles that unique to NewsEdge which would show the impact of taking it?",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1736199187990229"
+        },
+        {
+          "date": "2024-02-19",
+          "author": "Conor Gorman",
+          "channel": "success",
+          "text": "<@U034XEMF7NF> - Do we have a slide(s) for DACH Content with the current branding?\n\nIf so, <@U01PP4TK6H0> can you drop it in the BCG deck?",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1708333204667529"
+        },
+        {
+          "date": "2023-10-10",
+          "author": "Fabian Cornwell",
+          "channel": "success",
+          "text": "<!here> Does anyone have any clients who uses Briefings regularly in their bulletins that we could speak to?",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1696948088350399"
+        },
+        {
+          "date": "2020-08-10",
+          "author": "Alex Kaufman",
+          "channel": "success",
+          "text": "Does anyone have slides or collateral that demonstrate how Signal or manual analysis help to measure and analyze thought leadership? This does not include proposals.",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1597083290019700"
+        },
+        {
+          "date": "2020-08-10",
+          "author": "Alex Kaufman",
+          "channel": "success",
+          "text": "<!here> does anyone have slides/collateral on how Signal or manual analysis help to shape/measure/analyze thought leadership?",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1597078135016700"
+        },
+        {
+          "date": "2020-06-02",
+          "author": "Michael Manley",
+          "channel": "success",
+          "text": "Hi all! I have a client who just had an enforced auto-renewal a few months ago and I have finally been able to reengage them. I have a intro call on Friday with two new contacts there so I want to re-pitch Signal to them to ensure they become medium-high users. Does anyone have any decks or collateral theyve used for such instances?",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1591102068008400"
+        },
+        {
+          "date": "2020-01-09",
+          "author": "Luize Lazdane",
+          "channel": "success",
+          "text": "Hey guys, does anyone know/remember how the stories in the AI briefs are selected? So if I have a topic search for Energy which 10 articles will go into the brief ",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1578571529008600"
+        },
+        {
+          "date": "2019-07-16",
+          "author": "Alex Kaufman",
+          "channel": "success",
+          "text": "do we have a client facing one pager on Reach? <!here>",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1563312019005500"
         }
       ]
     },
@@ -327,6 +565,76 @@
           "channel": "commercial-global",
           "text": "Anyone know of any customers who have used Public Relay and might be happy to speak to their experience/why Signal is better?",
           "url": "https://signalhq.slack.com/archives/C04P01H413R/p1770401792525559"
+        },
+        {
+          "date": "2026-01-26",
+          "author": "Joanna Cresswell",
+          "channel": "success",
+          "text": "hi team, do we have a contact details for anyone at Propel? I need to enquire about a potential 6 month contract as Roxhill are bing a bit funny",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1769435286042729"
+        },
+        {
+          "date": "2023-11-20",
+          "author": "Anwen Evans",
+          "channel": "success",
+          "text": "Hi CSMs - there are some potential solutions being considered in the area of dashboard behaviour, to improve accuracy of the numbers that are displayed.\n\nTherefore, we are looking to do some problem space discovery with clients to make sure we understand their workflow in the cases where they download to Excel and then make charts etc. from there.\n\n*Would anyone have a client who has experienced t",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1700475430924709"
+        },
+        {
+          "date": "2021-02-22",
+          "author": "Alex Kaufman",
+          "channel": "success",
+          "text": "A client reached out asking who their TV Eyes AM/contact is. How should I help them? Do we have an AM that can help them out?",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1614030965003200"
+        },
+        {
+          "date": "2021-01-11",
+          "author": "Jeff Pole",
+          "channel": "success",
+          "text": "Thanks Mike. I should have been more explicit: while we are also looking for customers to speak to, I actually meant we are looking for people in Success to speak to about it too.",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1610382525003400"
+        },
+        {
+          "date": "2020-03-16",
+          "author": "Joanna Cresswell",
+          "channel": "success",
+          "text": "Does anyone have any new clients that they are currently onboarding and are yet to have an initial intro/discovery calls with? I would love to shadow these if possible",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1584358768002900"
+        },
+        {
+          "date": "2019-11-14",
+          "author": "Luize Lazdane",
+          "channel": "success",
+          "text": "very important request: does anyone have a good email that they have sent a client who have threatened to leave because of our costs?",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1573749516006400"
+        },
+        {
+          "date": "2019-07-26",
+          "author": "Isaac Eleini",
+          "channel": "success",
+          "text": "Can anyone think of a client who is using our Reach data (or previously just Monthly Unique Visitors) and applying their own multiplier to it?",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1564144856001300"
+        },
+        {
+          "date": "2019-05-22",
+          "author": "Mohamed Saeed",
+          "channel": "success",
+          "text": "Hey can someone send me the signal ambassador handout sheet that\u2019s on my desk please :blush:",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1558511322001100"
+        },
+        {
+          "date": "2019-04-17",
+          "author": "Isaac Eleini",
+          "channel": "success",
+          "text": "Can someone please send me the document that Mark W shared about the signal ambassador program?",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1555501191001300"
+        },
+        {
+          "date": "2018-11-22",
+          "author": "Isaac Eleini",
+          "channel": "success",
+          "text": "Can someone speak to Hannah about the changes please ",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1542898944004400"
         }
       ]
     },
@@ -467,6 +775,930 @@
           "channel": "commercial-global",
           "text": "Does anyone know if we have previously signed up to the UNGM (United Nations Global Marketplace) and if so what our UNGM number is?",
           "url": "https://signalhq.slack.com/archives/C04P01H413R/p1754406305209799"
+        },
+        {
+          "date": "2026-01-23",
+          "author": "Fabian Cornwell",
+          "channel": "success",
+          "text": "<!here>\nHey team - I need your help to identify some organisations that would be good early adopters for advanced search.\n\nI'm specifically looking for any of your clients that have problems around:\n\u2022 Duplicates in searches\n\u2022 Numbers not adding up around the web application\nPlease leave some suggestions in the thread below :arrow_down:",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1769183967249929"
+        },
+        {
+          "date": "2026-01-21",
+          "author": "Atiana Salazar",
+          "channel": "success",
+          "text": ":alert: pls help me brainstorm :blob_thinking_eyes:\n\nHi Team,\nCurious if any of your clients that take propel have asked for real-time alerts specifically for when an individual journalist publishes a story.\nWe cant accomplish this and neither can propel with alerts\u2026 does anyone have any niche ideas/workarounds?",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1769036029289289"
+        },
+        {
+          "date": "2025-09-11",
+          "author": "Anwen Evans",
+          "channel": "success",
+          "text": "can anyone please confirm to me with our definitions of Premium, Midmarket and Key? I believe this is based on their spend with us? And Enterprise, Strategic and SMB still exists as a categorisation, but is more 'firmographic'?",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1757596049624879"
+        },
+        {
+          "date": "2025-07-30",
+          "author": "Atiana Salazar",
+          "channel": "success",
+          "text": "Guys, do we have a reading list for Top German sources? I wish I knew but unfortunately I do not Sprechen Sie Deutsch",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1753841430462809"
+        },
+        {
+          "date": "2025-07-01",
+          "author": "Steph Morris",
+          "channel": "success",
+          "text": "my client has asked me to complete an anti-bribery and corruption assessment. do we have a response library anywhere for these kinds of questionnaires?",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1751394955346679"
+        },
+        {
+          "date": "2025-05-30",
+          "author": "Frederico Pinto",
+          "channel": "success",
+          "text": "<!here> - I am going through an supplier questionaire and only missing a section on US Tariffs, there are 16 questions to have it answered, does anyone know who will be the best department to get in touch for this? will it be Finance? there is nothing available in the Wiki.",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1748595345896689"
+        },
+        {
+          "date": "2025-04-30",
+          "author": "Steph Morris",
+          "channel": "success",
+          "text": "Anyone have an SBR/ QBR they are particularly proud of that you would recommend I listen to on Gong? :face_with_monocle:",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1746027347858419"
+        },
+        {
+          "date": "2024-12-18",
+          "author": "Anwen Evans",
+          "channel": "success",
+          "text": "We're getting valuable responses to this survey in the app, but we want to get the survey in front of users who are definitely actively interested in social offerings.\n\nCan anyone list off some customers/users who they know are waiting on/interested in social and we can boost this survey to them? Please reply in thread here if so :slightly_smiling_face: Cheers!",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1734533025557229"
+        },
+        {
+          "date": "2024-04-24",
+          "author": "Frederico Pinto",
+          "channel": "success",
+          "text": "<!here> Good morning Everyone -  - Does anyone know if we use Sisense in any capacity?\n\nMMC needs to confirm this as there is a security concern around the technology they use.",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1713945773672789"
+        },
+        {
+          "date": "2023-05-10",
+          "author": "Melanie Downes",
+          "channel": "success",
+          "text": "Was the Twitter Product Updates session recorded?\nDoes anyone have the link to this?",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1683706923934879"
+        },
+        {
+          "date": "2022-09-05",
+          "author": "Rosie Crouch",
+          "channel": "success",
+          "text": "Hi Team! Has anyone got an email that discusses the Mobile App being no longer available pretty please?",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1662393190179049"
+        },
+        {
+          "date": "2022-07-13",
+          "author": "Rosie Crouch",
+          "channel": "success",
+          "text": "<!here> Hello to the hive mind! I have a question from Centrica, they are hosting a press call on 28th Jul at 8am, they are looking for a human transcription service to record &amp; send the script within 5 hours. Does anyone know if our partners are capable of this or have any recommendations I can pass back to Gurpreet?",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1657713670056399"
+        },
+        {
+          "date": "2022-03-14",
+          "author": "Kayla K Pollack",
+          "channel": "success",
+          "text": "<!here> does anyone have a client that is using signal for supply chain or has a solid supply chain dashboard set up?",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1647283045004859"
+        },
+        {
+          "date": "2021-07-02",
+          "author": "Paggie Leung",
+          "channel": "success",
+          "text": "<@UD4C3DGAF> <@U03A28AHF> I\u2019ve reviewed the Future Fund searches and found two which was looking for \u201cany of these terms\u201d which might have contributed to the issue. Have fixed them now.\n\nMeanwhile, the client told us that they aren\u2019t getting the right searches results - not sure if this is because of the changes we made yesterday. I am working with them to see how we can get them what they want, w",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1625202441026600"
+        },
+        {
+          "date": "2021-03-24",
+          "author": "Isaac Eleini",
+          "channel": "success",
+          "text": "Does anyone have the document highlighting the *reasons for a price increase* at renewal please?",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1616589252017400"
+        },
+        {
+          "date": "2021-03-24",
+          "author": "Isaac Eleini",
+          "channel": "success",
+          "text": "Does anyone still use the Standard (Vanilla) process to renew clients? I haven't done this ever!",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1616579544015700"
+        },
+        {
+          "date": "2021-03-22",
+          "author": "Isaac Eleini",
+          "channel": "success",
+          "text": "Does anyone have wording for adding NewsEdge to a contract/addendum please?",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1616417689000400"
+        },
+        {
+          "date": "2021-03-17",
+          "author": "Alex Hunter",
+          "channel": "success",
+          "text": "Hi all\nWhen you need to provide a list of all active users to clients, do you need to copy and paste each user line by line each time (avoiding inactive)?! I was looking for a simple export and Support has confirmed there isn't one. This seems a huge surprise. Am I missing a simple trick here?",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1615993092003000"
+        },
+        {
+          "date": "2021-03-15",
+          "author": "Isaac Eleini",
+          "channel": "success",
+          "text": "Which clients do we have in Real Estate?",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1615831643005400"
+        },
+        {
+          "date": "2021-01-28",
+          "author": "Isaac Eleini",
+          "channel": "success",
+          "text": "Anyone got something for Ben Jones here? I have an onboarding plan but not a checklist per se....This is something we used to follow quite diligently interestingly",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1611848927000100"
+        },
+        {
+          "date": "2021-01-11",
+          "author": "Jeff Pole",
+          "channel": "success",
+          "text": "Hey Success team, who has clients that are creating *reader seats* to access content? We are looking for people to give us feedback on our plans for reader seats.",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1610382003001600"
+        },
+        {
+          "date": "2021-01-05",
+          "author": "Mohamed Saeed",
+          "channel": "success",
+          "text": "does anyone have the NLA usage excel to hand?",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1609852115009200"
+        },
+        {
+          "date": "2020-12-14",
+          "author": "Jeff Pole",
+          "channel": "success",
+          "text": "Does anyone else in the group have an alternative perspective?",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1607963935010400"
+        },
+        {
+          "date": "2020-11-17",
+          "author": "Isaac Eleini",
+          "channel": "success",
+          "text": "Does anyone have wording for renewals with w\nFactiva to state that it\u2019s available until 30th April 2021 blablabla",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1605614173004400"
+        },
+        {
+          "date": "2020-11-03",
+          "author": "Isaac Eleini",
+          "channel": "success",
+          "text": "Does anyone manage Baker McKenzie in the US?",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1604412046000300"
+        },
+        {
+          "date": "2020-10-14",
+          "author": "Isaac Eleini",
+          "channel": "success",
+          "text": "Anyone got a copy of Signal's latest standard T&amp;C's?",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1602696374020800"
+        },
+        {
+          "date": "2020-10-05",
+          "author": "Charlotte Elver",
+          "channel": "success",
+          "text": "<!here> does anyone have any client stories from within the construction industry? It is for an internal project I am working on so please slack me privately if so. I don't need loads and loads of info - just a little bit of info to guide me on my way. Thanks in advance!",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1601919810002500"
+        },
+        {
+          "date": "2020-09-29",
+          "author": "Hannah Hart",
+          "channel": "success",
+          "text": "Hey guys - we're launching a :new: website and looking for 2 or 3 BIG logos to feature on the homepage alongside a quote. We've asked a few of our big clients and unfortunately many don't do third party endorsements :sob: Any support would be highly appreciated!",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1601375931002600"
+        },
+        {
+          "date": "2020-09-15",
+          "author": "Charlie Briggs",
+          "channel": "success",
+          "text": "hey, I\u2019m doing some manual work to link every last org in orgs API to salesforce (there\u2019s about 80 left, it\u2019s tedious)\n\ndoes anyone in UK success know what this account is, or can it be deleted? <https://news-admin.tool.signal-ai.com/organisations/4c5ce5a6-10cf-4eae-925c-d97f53568fe0>. I\u2019ve already asked Alex K and he has no idea",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1600189131036600"
+        },
+        {
+          "date": "2020-08-25",
+          "author": "Alex Kaufman",
+          "channel": "success",
+          "text": "<!here> does anyone work with an Executive Communications team specifically?",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1598388988000700"
+        },
+        {
+          "date": "2020-08-05",
+          "author": "Mark Whistler",
+          "channel": "success",
+          "text": "<!here> do we have any quotes from customers we can use about how amazing you guys are that isn\u2019t from Allen&amp;Overy?",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1596618647002800"
+        },
+        {
+          "date": "2020-07-23",
+          "author": "Hannah Hart",
+          "channel": "success",
+          "text": "Hi team - Mr <@U0104HVEVQW> and I are scoping out a Signal AI owned webinar for August (ideally 19th). We\u2019re looking to get an EMEA and an US client on a panel\u00a0alongside Stuart Thomson (author of our latest white paper) to discuss successful long-term reputation management. This is a fairly broad topics so below are some areas we want to focus on:\n\n\t\u2022\u00a0Companies firefight against multiple crises wi",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1595516546003700"
+        },
+        {
+          "date": "2020-07-22",
+          "author": "Alex Hunter",
+          "channel": "success",
+          "text": "Anyone got Zoom issues today? I can't seem to create Zoom invites in my calendar - it won't connect.",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1595409075004700"
+        },
+        {
+          "date": "2020-07-13",
+          "author": "Alex Kaufman",
+          "channel": "success",
+          "text": "<!here> does anyone have workspaces enabled for a client/built into the contract?",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1594652766000800"
+        },
+        {
+          "date": "2020-07-08",
+          "author": "Isaac Eleini",
+          "channel": "success",
+          "text": "Does anyone have specific client feedback on the (poor) quality of translations? Miguel asked me to share some with him so I thought I would put this out to the team",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1594229967005500"
+        },
+        {
+          "date": "2020-06-30",
+          "author": "Anwen Evans",
+          "channel": "success",
+          "text": "do we have a name for the agency/edu/NFP team?",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1593507978000300"
+        },
+        {
+          "date": "2020-06-29",
+          "author": "Isaac Eleini",
+          "channel": "success",
+          "text": "Does anyone have the blurb for the other details in a contract which states there are x free months ?",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1593452487005800"
+        },
+        {
+          "date": "2020-06-23",
+          "author": "Luize Lazdane",
+          "channel": "success",
+          "text": "classic question - do we have The Lawyer? Am I dreaming that we had some issues with it...",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1592903013000400"
+        },
+        {
+          "date": "2020-06-15",
+          "author": "Lea Tumale",
+          "channel": "success",
+          "text": "Hi Guys, does anyone work with a client that has Factiva for licensed users who are from both the client/corporate and Agency user in one account?",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1592233787004800"
+        },
+        {
+          "date": "2020-06-11",
+          "author": "Joanna Cresswell",
+          "channel": "success",
+          "text": "hi guys, does anyone here know how many users does Factiva Reseller licence cover? :thinking_face:",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1591884412000700"
+        },
+        {
+          "date": "2020-05-28",
+          "author": "Luize Lazdane",
+          "channel": "success",
+          "text": "hey guys, does anyone have a great international reading list that encompasses key global publications? Could be a mix of existing reading lists? Just looking for tips if you have done anything previouly",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1590658560001100"
+        },
+        {
+          "date": "2020-05-27",
+          "author": "Isaac Eleini",
+          "channel": "success",
+          "text": "Has anyone got a good email explaining all the reasons for the 5% increase at renewal? ",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1590593287005800"
+        },
+        {
+          "date": "2020-05-27",
+          "author": "Luize Lazdane",
+          "channel": "success",
+          "text": "what's the reason does anyone know why we cannot sell Factiva to universities?",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1590569297001500"
+        },
+        {
+          "date": "2020-05-27",
+          "author": "Luize Lazdane",
+          "channel": "success",
+          "text": "hey there, do we have a list of factiva only publications?",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1590568452000400"
+        },
+        {
+          "date": "2020-05-15",
+          "author": "Isaac Eleini",
+          "channel": "success",
+          "text": "Has anyone got 2 mins to walk through Itay's retention doc with me please?",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1589548239000300"
+        },
+        {
+          "date": "2020-05-12",
+          "author": "Lea Tumale",
+          "channel": "success",
+          "text": "Can someone remind me how much would it be to activate Factiva for a client? Is it still \u00a31,800 pa?",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1589297869009100"
+        },
+        {
+          "date": "2020-05-12",
+          "author": "Isaac Eleini",
+          "channel": "success",
+          "text": "Does anyone have a process/document/anything they use to understand what sources have been requested by their clients",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1589295788004300"
+        },
+        {
+          "date": "2020-05-12",
+          "author": "Alex Kaufman",
+          "channel": "success",
+          "text": "hey all - does anyone know if there's been any movement on getting law360 back?",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1589290851003200"
+        },
+        {
+          "date": "2020-05-05",
+          "author": "Luize Lazdane",
+          "channel": "success",
+          "text": "<@UCCRR0M4N> - do we have any pricing at all for agency customers for consumer print?",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1588673565000600"
+        },
+        {
+          "date": "2020-04-30",
+          "author": "Lea Tumale",
+          "channel": "success",
+          "text": "Hi guys, can someone remind me how 'Relevancy' works when ordering articles by Most Relevant? What criteria does it use?",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1588249638022000"
+        },
+        {
+          "date": "2020-04-29",
+          "author": "Luize Lazdane",
+          "channel": "success",
+          "text": "Sorry to break this up with something else, but do we have any neat explanation as to why we don't do AVEs?",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1588163296013500"
+        },
+        {
+          "date": "2020-04-16",
+          "author": "Mamta Bains",
+          "channel": "success",
+          "text": "can someone send me this invite",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1587025361019200"
+        },
+        {
+          "date": "2020-04-15",
+          "author": "Isaac Eleini",
+          "channel": "success",
+          "text": "Does anyone else keep finding duplicate accounts on SF that are in Leah or SDR's names?",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1586970255018000"
+        },
+        {
+          "date": "2020-04-15",
+          "author": "Lea Tumale",
+          "channel": "success",
+          "text": "Anyone know why we can no longer see any The Grocer online content? They dont even appear in feeds any more.",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1586967891009500"
+        },
+        {
+          "date": "2020-04-03",
+          "author": "Lea Tumale",
+          "channel": "success",
+          "text": "Hey peeps, does anyone work with Sinclair Hill at FTI? I don't so likely a prospect.",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1585921913004300"
+        },
+        {
+          "date": "2020-04-02",
+          "author": "Mamta Bains",
+          "channel": "success",
+          "text": "does anyone have a list of NLA sources that are delivered to us",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1585853318024400"
+        },
+        {
+          "date": "2020-04-02",
+          "author": "Alex Kaufman",
+          "channel": "success",
+          "text": "<!here> anyone got a good feed/bulletin surrounding food and delivery strikes going on?",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1585843155013000"
+        },
+        {
+          "date": "2020-03-30",
+          "author": "Isaac Eleini",
+          "channel": "success",
+          "text": "Can someone add me in",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1585580639019500"
+        },
+        {
+          "date": "2020-03-30",
+          "author": "Mamta Bains",
+          "channel": "success",
+          "text": "does anyone know who if Paul Al Nakash is working at all?",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1585559846004000"
+        },
+        {
+          "date": "2020-03-25",
+          "author": "Mark Whistler",
+          "channel": "success",
+          "text": "<!here> - We are planning to send email comms to all EMEA users about the drop in NLA Print content - Does anyone have any objections to this/does anyone know of a reason that it should go to users outside of EMEA?",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1585129117002100"
+        },
+        {
+          "date": "2020-03-25",
+          "author": "Anwen Evans",
+          "channel": "success",
+          "text": "anyone know if there's a legit reason for this?",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1585128759001200"
+        },
+        {
+          "date": "2020-03-04",
+          "author": "Isaac Eleini",
+          "channel": "success",
+          "text": "Anyone have the NLA pricing spreadsheet thing??",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1583315366000400"
+        },
+        {
+          "date": "2020-02-18",
+          "author": "Mohamed Saeed",
+          "channel": "success",
+          "text": "Hey guys currently enroute RHUL can someone send me a word doc of our T&amp;C\u2019s please ?",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1582036041001600"
+        },
+        {
+          "date": "2020-02-12",
+          "author": "Isaac Eleini",
+          "channel": "success",
+          "text": "Does anyone have *a list* of unique Factiva publications?",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1581529026000500"
+        },
+        {
+          "date": "2020-02-04",
+          "author": "Isaac Eleini",
+          "channel": "success",
+          "text": "Hey - can someone advise me on how to seperate my Gmail inbox by alerts and everything else?",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1580821909005400"
+        },
+        {
+          "date": "2020-02-04",
+          "author": "Mohamed Saeed",
+          "channel": "success",
+          "text": "Hi team will be WFH can someone put my phone on divert :)",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1580807760000800"
+        },
+        {
+          "date": "2020-01-21",
+          "author": "Anwen Evans",
+          "channel": "success",
+          "text": "I was looking for quick wins :wink:",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1579627737006900"
+        },
+        {
+          "date": "2020-01-21",
+          "author": "Isaac Eleini",
+          "channel": "success",
+          "text": "Can someone ask Anwer (in person) to do this?",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1579615031001900"
+        },
+        {
+          "date": "2020-01-17",
+          "author": "Isaac Eleini",
+          "channel": "success",
+          "text": "Did /can someone please pick up panmure request",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1579263845000700"
+        },
+        {
+          "date": "2019-12-17",
+          "author": "Alex Kaufman",
+          "channel": "success",
+          "text": "hey - anyone got a great healthcare client with a nice account build?",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1576593230010000"
+        },
+        {
+          "date": "2019-12-17",
+          "author": "Luize Lazdane",
+          "channel": "success",
+          "text": "anyone got the direct link to the T&amp;Cs of the contracts",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1576592621008700"
+        },
+        {
+          "date": "2019-12-10",
+          "author": "Mohamed Saeed",
+          "channel": "success",
+          "text": "sort of thing I was looking for <@UFKN4813N> very helpful thanks",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1575994903004200"
+        },
+        {
+          "date": "2019-12-05",
+          "author": "Isaac Eleini",
+          "channel": "success",
+          "text": "Does anyone have a shared Google file/folder/doc that they collaborate with clients on?",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1575551561006900"
+        },
+        {
+          "date": "2019-11-21",
+          "author": "Isaac Eleini",
+          "channel": "success",
+          "text": "Can someone put my call forwarding on please. Thanks ",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1574319764000800"
+        },
+        {
+          "date": "2019-11-13",
+          "author": "Gerry King",
+          "channel": "success",
+          "text": "hey guys, does anyone know how we add extra NLA blocks to an opp?",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1573666181004000"
+        },
+        {
+          "date": "2019-11-04",
+          "author": "Isaac Eleini",
+          "channel": "success",
+          "text": "Can someone please send me a screenshot of the active accounts under the King\u2019s College London account",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1572861798000200"
+        },
+        {
+          "date": "2019-10-31",
+          "author": "Luize Lazdane",
+          "channel": "success",
+          "text": "does anyone have any chewing gum pls",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1572540172000300"
+        },
+        {
+          "date": "2019-10-22",
+          "author": "Isaac Eleini",
+          "channel": "success",
+          "text": "There was a search looking for any of these terms with the UK source location filter",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1571731957001100"
+        },
+        {
+          "date": "2019-10-21",
+          "author": "Isaac Eleini",
+          "channel": "success",
+          "text": "Does anyone know how many countries we get coverage from and in how many languages??",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1571661483005300"
+        },
+        {
+          "date": "2019-10-08",
+          "author": "Anwen Evans",
+          "channel": "success",
+          "text": "Anyone got their laptop and can share the NLA google sheet with Alex Hunter and Lea and Luize, please?",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1570554496002100"
+        },
+        {
+          "date": "2019-10-07",
+          "author": "Isaac Eleini",
+          "channel": "success",
+          "text": "Does anyone have any wording on the reasons for the (latest) NLA change?",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1570440923001000"
+        },
+        {
+          "date": "2019-10-04",
+          "author": "Isaac Eleini",
+          "channel": "success",
+          "text": "Can someone do NLA if they have time?",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1570181109000900"
+        },
+        {
+          "date": "2019-10-02",
+          "author": "Lea Tumale",
+          "channel": "success",
+          "text": "Hi Guys, does anyone have a quick sec to advise on how we're sending renewal contracts across to clients with the latest DocuSign issues?",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1570012584001200"
+        },
+        {
+          "date": "2019-09-30",
+          "author": "Benji Gavron",
+          "channel": "success",
+          "text": "Hi Team, can someone in London confirm that Success meeting calendar invite shows the right room booked on your end?",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1569850868000800"
+        },
+        {
+          "date": "2019-09-26",
+          "author": "Lea Tumale",
+          "channel": "success",
+          "text": "Hi Guys, I might have asked this before. Does anyone have any standard blurb around why we need to send clients Lexis T&amp;Cs to accept separately?",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1569506732001700"
+        },
+        {
+          "date": "2019-09-24",
+          "author": "Anwen Evans",
+          "channel": "success",
+          "text": "has anyone got a re ording?",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1569341072014400"
+        },
+        {
+          "date": "2019-09-19",
+          "author": "Isaac Eleini",
+          "channel": "success",
+          "text": "Does anyone have any clients/users based in Edinburgh that they want me to meet face to face. I'll be there for 2 days meeting clients at the end of October.",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1568888756001000"
+        },
+        {
+          "date": "2019-09-18",
+          "author": "Isaac Eleini",
+          "channel": "success",
+          "text": "Can someone do NLA numbers please?",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1568796559000300"
+        },
+        {
+          "date": "2019-09-16",
+          "author": "Anwen Evans",
+          "channel": "success",
+          "text": "Guys do we have any clients that receive summary services from us that created in Signal?",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1568649764004500"
+        },
+        {
+          "date": "2019-09-12",
+          "author": "Alex Kaufman",
+          "channel": "success",
+          "text": "anyone got hedge fund clients?",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1568299323000500"
+        },
+        {
+          "date": "2019-09-11",
+          "author": "Lea Tumale",
+          "channel": "success",
+          "text": "Hey all, does anyone have a 6mo break clause in any of their client contracts? looking for wording to use/include in a renewal contract.",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1568213332002400"
+        },
+        {
+          "date": "2019-09-09",
+          "author": "Lea Tumale",
+          "channel": "success",
+          "text": "Hi Guys, do we have any standard blurb on why we charge additional fees for NLA Print?",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1568030404000700"
+        },
+        {
+          "date": "2019-09-02",
+          "author": "Mohamed Saeed",
+          "channel": "success",
+          "text": "<!here> can someone please follow up with Mark W about Emma Darling\u2019s CLA/NLA email I forwarded it to him last week but didn\u2019t get a response ",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1567421165002100"
+        },
+        {
+          "date": "2019-08-30",
+          "author": "Alex Kaufman",
+          "channel": "success",
+          "text": "<!here> does anyone else have clients in Brazil, Portugal, or who have users based in Portuguese speaking countries?",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1567176464000500"
+        },
+        {
+          "date": "2019-08-15",
+          "author": "Isaac Eleini",
+          "channel": "success",
+          "text": "Anyone know how to end an Uber bike trip?",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1565864373004900"
+        },
+        {
+          "date": "2019-08-14",
+          "author": "Isaac Eleini",
+          "channel": "success",
+          "text": "Can someone please check the yearly estimate of NLA articles for RBS ",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1565796696000100"
+        },
+        {
+          "date": "2019-08-07",
+          "author": "Benji Gavron",
+          "channel": "success",
+          "text": "but I can\u2019t find it anywhere. Does anyone know what I\u2019m banging on about",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1565194764007600"
+        },
+        {
+          "date": "2019-08-07",
+          "author": "Louis Cointepas",
+          "channel": "success",
+          "text": "he\u2019s looking for an article",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1565184335002300"
+        },
+        {
+          "date": "2019-08-05",
+          "author": "Anwen Evans",
+          "channel": "success",
+          "text": "can anyone see my screen?",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1565014546004500"
+        },
+        {
+          "date": "2019-07-19",
+          "author": "Isaac Eleini",
+          "channel": "success",
+          "text": "Got a manic morning. Can someone do me a favour?",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1563544987000400"
+        },
+        {
+          "date": "2019-06-20",
+          "author": "Benji Gavron",
+          "channel": "success",
+          "text": "<!here> - does anyone have a roxhill pricing sheet?",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1561047919001400"
+        },
+        {
+          "date": "2019-06-18",
+          "author": "Mohamed Saeed",
+          "channel": "success",
+          "text": "anyone got clients in Amersham? train ticket going..",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1560851114005000"
+        },
+        {
+          "date": "2019-06-18",
+          "author": "Isaac Eleini",
+          "channel": "success",
+          "text": "Can someone please give me Sarah Douglas\u2019 number",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1560847263003900"
+        },
+        {
+          "date": "2019-06-13",
+          "author": "Isaac Eleini",
+          "channel": "success",
+          "text": "UK TEAM: Hey can someone pick up the Laura Brooks email please? Maybe forward to Lea?",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1560434597003700"
+        },
+        {
+          "date": "2019-06-12",
+          "author": "Daniel Bowman",
+          "channel": "success",
+          "text": "can someone just share their pw with him then he can login and see this stuff? Andy / Tom M use Callums already I think",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1560347677011800"
+        },
+        {
+          "date": "2019-06-03",
+          "author": "Isaac Eleini",
+          "channel": "success",
+          "text": "Hey. Can someone please look at the NLA volumes for Aggreko please. ",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1559557295000500"
+        },
+        {
+          "date": "2019-05-31",
+          "author": "Isaac Eleini",
+          "channel": "success",
+          "text": "Can someone give me Adrian Jones\u2019 number ?",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1559301095000500"
+        },
+        {
+          "date": "2019-05-30",
+          "author": "Anwen Evans",
+          "channel": "success",
+          "text": "Anyone have a number for Charlotte at MM?",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1559209053000300"
+        },
+        {
+          "date": "2019-05-28",
+          "author": "Anwen Evans",
+          "channel": "success",
+          "text": "Looking for this specific type of client",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1559056004000600"
+        },
+        {
+          "date": "2019-05-13",
+          "author": "Anwen Evans",
+          "channel": "success",
+          "text": "Anyone have a sentiment paragraph? About how it worked out etc.",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1557766522004200"
+        },
+        {
+          "date": "2019-05-09",
+          "author": "Alex Kaufman",
+          "channel": "success",
+          "text": "do we have a topic request form?",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1557425201001700"
+        },
+        {
+          "date": "2019-05-07",
+          "author": "Alex Kaufman",
+          "channel": "success",
+          "text": "hey <!here> do we have an updated Factiva one sheeter that does not include The Australian on it (since Factiva does not have that anymore)?",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1557239804000600"
+        },
+        {
+          "date": "2019-04-30",
+          "author": "Alex Kaufman",
+          "channel": "success",
+          "text": "hey - does anyone here have a good email to a client re: triggering the autorenewal?",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1556641052005000"
+        },
+        {
+          "date": "2019-04-02",
+          "author": "Gerry King",
+          "channel": "success",
+          "text": "<!here> does anyone have a list of the NLA titles included in the content set? print and online?",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1554225492003400"
+        },
+        {
+          "date": "2019-03-28",
+          "author": "Anwen Evans",
+          "channel": "success",
+          "text": "is anwer around? can someone send him to Th List?",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1553791325006000"
+        },
+        {
+          "date": "2019-03-15",
+          "author": "Benji Gavron",
+          "channel": "success",
+          "text": "<!here> - Anyone know who our factiva US contaact is",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1552663549003400"
+        },
+        {
+          "date": "2019-03-13",
+          "author": "Isaac Eleini",
+          "channel": "success",
+          "text": "Hope this makes sense and is what you\u2019re looking for",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1552509815018900"
+        },
+        {
+          "date": "2019-03-04",
+          "author": "Anwen Evans",
+          "channel": "success",
+          "text": "but does anyone take responsibility for doing roundups and stuff for them?",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1551720609020200"
+        },
+        {
+          "date": "2019-03-04",
+          "author": "Anwen Evans",
+          "channel": "success",
+          "text": "we are looking for another",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1551712109014000"
+        },
+        {
+          "date": "2019-03-01",
+          "author": "Mohamed Saeed",
+          "channel": "success",
+          "text": "sitting in the booth if anyone is looking for me",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1551430317000300"
+        },
+        {
+          "date": "2019-02-07",
+          "author": "Mohamed Saeed",
+          "channel": "success",
+          "text": "hi team, does anyone have a blurb for why we don't add print sources to the platform on request?",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1549547444000800"
+        },
+        {
+          "date": "2019-01-28",
+          "author": "Anwen Evans",
+          "channel": "success",
+          "text": "anyone got some blurb on justifying price increase? I'm being lazy, apols :slightly_smiling_face:",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1548681179001600"
+        },
+        {
+          "date": "2018-12-21",
+          "author": "Isaac Eleini",
+          "channel": "success",
+          "text": "Hi Julia,\n\nThanks for chasing and I apologise for the slow response - I have been liaising with a few colleagues internally about this.\n\nCosts will generally rise from year to year. How much will depend on the scale of the service and choice of products, as well as factoring in inflation and other product developments?\n\nI would love to discuss this with you in greater detail on a call to understan",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1545388183009000"
+        },
+        {
+          "date": "2018-12-20",
+          "author": "Isaac Eleini",
+          "channel": "success",
+          "text": "Do we have to wait for our client to sign the contract with Factiva before turning this on?",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1545330811031600"
+        },
+        {
+          "date": "2018-12-20",
+          "author": "Anwen Evans",
+          "channel": "success",
+          "text": "can someone do the chocs btw? :slightly_smiling_face:",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1545312568018100"
+        },
+        {
+          "date": "2018-12-17",
+          "author": "Isaac Eleini",
+          "channel": "success",
+          "text": "I\u2019m looking to gain a few stats, ideally without doing any clunky excel downloads. Let me know if you can help!\n\n(1) How many languages do we translate?\n(2) How many broadcast sources do we have? Do we know the number of sources by country? I know it is only English language but would be good to see where from.\n(3) Why do we not translate foreign language broadcast? Is it because of the quality of",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1545072533022000"
+        },
+        {
+          "date": "2018-12-06",
+          "author": "Isaac Eleini",
+          "channel": "success",
+          "text": "We are looking for a solution with Commetric",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1544090000005000"
+        },
+        {
+          "date": "2018-12-05",
+          "author": "Isaac Eleini",
+          "channel": "success",
+          "text": "Hey can someone action the Amadeus email to Ivett please ",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1544014025005100"
+        },
+        {
+          "date": "2018-11-07",
+          "author": "Anwen Evans",
+          "channel": "success",
+          "text": "Luckily Vivienne has hers. Can someone check it\u2019s on my desk?! ",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1541599245000800"
+        },
+        {
+          "date": "2018-11-05",
+          "author": "Louis Cointepas",
+          "channel": "success",
+          "text": "can someone just paste the link here?",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1541430836001000"
+        },
+        {
+          "date": "2018-10-31",
+          "author": "Mohamed Saeed",
+          "channel": "success",
+          "text": "On floor 3 if anyone is looking for me ",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1540994894001000"
+        },
+        {
+          "date": "2018-10-29",
+          "author": "Louis Cointepas",
+          "channel": "success",
+          "text": "Can someone in the UK show Isabel how to do a hangout?",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1540821813001300"
         }
       ]
     }
