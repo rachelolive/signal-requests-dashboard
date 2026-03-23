@@ -192,10 +192,12 @@
 
     .ch-commercial { background: #E6F1FB; color: #0C447C; }
     .ch-aes { background: #E1F5EE; color: #085041; }
+    .ch-success { background: #FFF3E0; color: #7A3B00; }
 
     @media (prefers-color-scheme: dark) {
       .ch-commercial { background: #0C2E4E; color: #85B7EB; }
       .ch-aes { background: #073526; color: #5DCAA5; }
+      .ch-success { background: #3D2000; color: #FFB74D; }
     }
 
     .msg-date { font-size: 11px; color: var(--text-hint); }
@@ -236,7 +238,7 @@
 <header>
   <div>
     <h1>Info requests tracker</h1>
-    <p>#commercial-global &amp; #aes-global — since Jan 2024</p>
+    <p>#commercial-global, #aes-global &amp; #success — since Jan 2024</p>
   </div>
   <div id="last-updated">Last synced: loading…</div>
 </header>
@@ -249,6 +251,7 @@
     <div class="legend">
       <span><i class="legend-dot" style="background:#185FA5"></i>#commercial-global</span>
       <span><i class="legend-dot" style="background:#1D9E75"></i>#aes-global</span>
+      <span><i class="legend-dot" style="background:#F57C00"></i>#success</span>
     </div>
   </div>
   <div id="tlChart-wrap"><canvas id="tlChart"></canvas></div>
@@ -396,15 +399,16 @@ function buildTimeline(categories) {
     cat.requests.forEach(r => {
       const d = new Date(r.date);
       const key = `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}`;
-      if (!counts[key]) counts[key] = {cg:0, aes:0};
+      if (!counts[key]) counts[key] = {cg:0, aes:0, success:0};
       if (r.channel === 'commercial-global') counts[key].cg++;
+      else if (r.channel === 'success') counts[key].success++;
       else counts[key].aes++;
     });
   });
 
   const sorted = Object.keys(counts).sort();
-  // Fill gaps between first and last month
-  const labels = [], cgData = [], aesData = [];
+  const moNames = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  const labels = [], keys = [], cgData = [], aesData = [], successData = [];
   if (sorted.length) {
     const [sy, sm] = sorted[0].split('-').map(Number);
     const [ey, em] = sorted[sorted.length-1].split('-').map(Number);
@@ -412,20 +416,23 @@ function buildTimeline(categories) {
     while (y < ey || (y === ey && m <= em)) {
       const key = `${y}-${String(m).padStart(2,'0')}`;
       const [, mo] = key.split('-');
-      const moNames = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
       labels.push(moNames[+mo-1]+' '+String(y).slice(2));
+      keys.push(key);
       cgData.push(counts[key]?.cg || 0);
       aesData.push(counts[key]?.aes || 0);
+      successData.push(counts[key]?.success || 0);
       if (m === 12) { y++; m = 1; } else m++;
     }
   }
-  return {labels, cgData, aesData};
+  return {labels, keys, cgData, aesData, successData};
 }
 
 // ── Render ──────────────────────────────────────────────────────────────────
 let tlChart = null;
+let _allData = null; // store globally for bar-click access
 
 function render(data) {
+  _allData = data;
   const allReqs = data.categories.flatMap(c => c.requests);
   const total = allReqs.length;
 
@@ -465,7 +472,7 @@ function render(data) {
     </div>`).join('');
 
   // Timeline chart
-  const {labels, cgData, aesData} = buildTimeline(data.categories);
+  const {labels, keys, cgData, aesData, successData} = buildTimeline(data.categories);
   if (tlChart) tlChart.destroy();
   tlChart = new Chart(document.getElementById('tlChart'), {
     type: 'bar',
@@ -473,15 +480,31 @@ function render(data) {
       labels,
       datasets: [
         {label:'#commercial-global', data:cgData, backgroundColor:'#185FA5', stack:'s'},
-        {label:'#aes-global', data:aesData, backgroundColor:'#1D9E75', stack:'s'}
+        {label:'#aes-global', data:aesData, backgroundColor:'#1D9E75', stack:'s'},
+        {label:'#success', data:successData, backgroundColor:'#F57C00', stack:'s'}
       ]
     },
     options: {
       responsive:true, maintainAspectRatio:false,
-      plugins:{ legend:{display:false}, tooltip:{mode:'index',intersect:false} },
+      cursor: 'pointer',
+      plugins:{
+        legend:{display:false},
+        tooltip:{mode:'index',intersect:false}
+      },
       scales:{
         x:{stacked:true, grid:{display:false}, ticks:{font:{size:10}, maxRotation:45, autoSkip:true, maxTicksLimit:16}},
         y:{stacked:true, beginAtZero:true, grid:{color:'rgba(128,128,128,0.1)'}, ticks:{stepSize:2, font:{size:10}}}
+      },
+      onClick(evt, elements) {
+        if (!elements.length) return;
+        const idx = elements[0].index;
+        const monthKey = keys[idx];
+        const monthLabel = labels[idx];
+        document.querySelectorAll('.cat-card').forEach(c => c.classList.remove('active'));
+        openMonthPanel(monthKey, monthLabel);
+      },
+      onHover(evt) {
+        evt.native.target.style.cursor = 'pointer';
       }
     }
   });
@@ -516,11 +539,17 @@ function fmtDate(d) {
   return ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'][+m-1]+' '+day+', '+y;
 }
 
+function channelClass(ch) {
+  if (ch === 'commercial-global') return 'ch-commercial';
+  if (ch === 'aes-global') return 'ch-aes';
+  if (ch === 'success') return 'ch-success';
+  return 'ch-aes';
+}
+
 function openPanel(cat) {
   const panel = document.getElementById('msg-panel');
   document.getElementById('panel-title').textContent = cat.name + ' — ' + cat.requests.length + ' requests tracked';
 
-  // Mark new (last 30 days) relative to last sync or today
   const cutoff = Date.now() - 30*24*60*60*1000;
   const sorted = [...cat.requests].sort((a,b) => a.date.localeCompare(b.date));
 
@@ -529,7 +558,7 @@ function openPanel(cat) {
     return `<div class="msg-item">
       <div class="msg-meta">
         <span class="msg-author">${r.author}</span>
-        <span class="msg-channel ${r.channel==='commercial-global'?'ch-commercial':'ch-aes'}">#${r.channel}</span>
+        <span class="msg-channel ${channelClass(r.channel)}">#${r.channel}</span>
         <span class="msg-date">${fmtDate(r.date)}</span>
         ${isNew ? '<span class="new-badge">new</span>' : ''}
       </div>
@@ -537,6 +566,37 @@ function openPanel(cat) {
       <a class="msg-link" href="${r.url}" target="_blank" rel="noopener">Open in Slack →</a>
     </div>`;
   }).join('');
+
+  panel.style.display = 'block';
+  setTimeout(() => panel.scrollIntoView({behavior:'smooth', block:'nearest'}), 50);
+}
+
+function openMonthPanel(monthKey, monthLabel) {
+  if (!_allData) return;
+  const allReqs = _allData.categories.flatMap(c => c.requests);
+  const filtered = allReqs
+    .filter(r => r.date.startsWith(monthKey))
+    .sort((a,b) => a.date.localeCompare(b.date));
+
+  const panel = document.getElementById('msg-panel');
+  document.getElementById('panel-title').textContent =
+    monthLabel + ' — ' + filtered.length + ' request' + (filtered.length !== 1 ? 's' : '');
+
+  if (!filtered.length) {
+    document.getElementById('msg-list').innerHTML =
+      '<div class="msg-item" style="color:var(--text-hint);font-size:13px">No requests recorded this month.</div>';
+  } else {
+    document.getElementById('msg-list').innerHTML = filtered.map(r => `
+      <div class="msg-item">
+        <div class="msg-meta">
+          <span class="msg-author">${r.author}</span>
+          <span class="msg-channel ${channelClass(r.channel)}">#${r.channel}</span>
+          <span class="msg-date">${fmtDate(r.date)}</span>
+        </div>
+        <div class="msg-text">${r.text}</div>
+        <a class="msg-link" href="${r.url}" target="_blank" rel="noopener">Open in Slack →</a>
+      </div>`).join('');
+  }
 
   panel.style.display = 'block';
   setTimeout(() => panel.scrollIntoView({behavior:'smooth', block:'nearest'}), 50);
