@@ -374,6 +374,7 @@
     <span class="feedback-count" id="feedback-count">Loading…</span>
     <input class="feedback-search" id="feedback-search" type="text" placeholder="Search feedback…" />
   </div>
+  <div id="feedback-cats" style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:1.25rem;"></div>
   <div class="feedback-list" id="feedback-list">
     <div class="feedback-empty">Loading feedback…</div>
   </div>
@@ -727,6 +728,17 @@ document.querySelectorAll('.tab-btn').forEach(btn => {
 // ── Feedback ─────────────────────────────────────────────────────────────────
 let feedbackLoaded = false;
 let allFeedback = [];
+let activeFeedbackCat = null;
+
+const FEEDBACK_CATEGORIES = [
+  { id: 'positive',  name: 'Positive feedback',   color: '#1D9E75' },
+  { id: 'askaiq',    name: 'AI & AskAIQ',          color: '#534AB7' },
+  { id: 'content',   name: 'Content & sources',    color: '#854F0B' },
+  { id: 'search',    name: 'Search & filters',     color: '#185FA5' },
+  { id: 'alerts',    name: 'Alerts & bulletins',   color: '#0F6E56' },
+  { id: 'exports',   name: 'Exports & reporting',  color: '#993C1D' },
+  { id: 'admin',     name: 'Admin & permissions',  color: '#5F5E5A' },
+];
 
 async function loadFeedback() {
   feedbackLoaded = true;
@@ -735,12 +747,56 @@ async function loadFeedback() {
     if (!res.ok) throw new Error('no file');
     const data = await res.json();
     allFeedback = data.messages || [];
+    renderFeedbackCats();
     renderFeedback(allFeedback);
   } catch {
     document.getElementById('feedback-list').innerHTML =
       '<div class="feedback-empty">No feedback data found. Run the sync to populate this tab.</div>';
     document.getElementById('feedback-count').textContent = '0 messages';
   }
+}
+
+function renderFeedbackCats() {
+  const container = document.getElementById('feedback-cats');
+  const counts = {};
+  allFeedback.forEach(m => { counts[m.category] = (counts[m.category] || 0) + 1; });
+
+  container.innerHTML = FEEDBACK_CATEGORIES.map(cat => {
+    const n = counts[cat.id] || 0;
+    if (!n) return '';
+    return `<button class="cat-filter-btn" data-cat="${cat.id}"
+      style="background:var(--surface);border:0.5px solid var(--border);border-radius:8px;
+      padding:7px 12px;font-size:12px;cursor:pointer;color:var(--text-muted);
+      display:flex;align-items:center;gap:6px;transition:border-color 0.15s">
+      <span style="width:8px;height:8px;border-radius:2px;background:${cat.color};display:inline-block"></span>
+      ${cat.name} <span style="color:${cat.color};font-weight:500">${n}</span>
+    </button>`;
+  }).join('');
+
+  container.querySelectorAll('.cat-filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const cat = btn.dataset.cat;
+      if (activeFeedbackCat === cat) {
+        activeFeedbackCat = null;
+        container.querySelectorAll('.cat-filter-btn').forEach(b =>
+          b.style.boxShadow = 'none');
+      } else {
+        activeFeedbackCat = cat;
+        container.querySelectorAll('.cat-filter-btn').forEach(b =>
+          b.style.boxShadow = b.dataset.cat === cat ? `0 0 0 1.5px ${FEEDBACK_CATEGORIES.find(c=>c.id===cat).color}` : 'none');
+      }
+      applyFeedbackFilters();
+    });
+  });
+}
+
+function applyFeedbackFilters() {
+  const q = document.getElementById('feedback-search').value.toLowerCase();
+  let filtered = allFeedback;
+  if (activeFeedbackCat) filtered = filtered.filter(m => m.category === activeFeedbackCat);
+  if (q) filtered = filtered.filter(m =>
+    m.text.toLowerCase().includes(q) || m.author.toLowerCase().includes(q));
+  renderFeedback(filtered);
 }
 
 function renderFeedback(messages) {
@@ -754,23 +810,21 @@ function renderFeedback(messages) {
   }
 
   const sorted = [...messages].sort((a, b) => b.date.localeCompare(a.date));
-  list.innerHTML = sorted.map(m => `
-    <div class="feedback-item">
+  list.innerHTML = sorted.map(m => {
+    const cat = FEEDBACK_CATEGORIES.find(c => c.id === m.category);
+    return `<div class="feedback-item">
       <div class="feedback-meta">
         <span class="feedback-author">${m.author}</span>
+        ${cat ? `<span style="font-size:10px;padding:2px 7px;border-radius:3px;font-weight:500;background:${cat.color}22;color:${cat.color}">${cat.name}</span>` : ''}
         <span class="feedback-date">${fmtDate(m.date)}</span>
       </div>
       <div class="feedback-text">${m.text}</div>
       <a class="feedback-link" href="${m.url}" target="_blank" rel="noopener">Open in Slack →</a>
-    </div>`).join('');
+    </div>`;
+  }).join('');
 }
 
-document.getElementById('feedback-search').addEventListener('input', e => {
-  const q = e.target.value.toLowerCase();
-  renderFeedback(q ? allFeedback.filter(m =>
-    m.text.toLowerCase().includes(q) || m.author.toLowerCase().includes(q)
-  ) : allFeedback);
-});
+document.getElementById('feedback-search').addEventListener('input', applyFeedbackFilters);
 
 loadData().then(render);
 </script>
