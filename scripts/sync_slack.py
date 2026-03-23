@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-sync_slack.py — Fetches new info requests from #commercial-global, #aes-global and #success
-and writes them into data/requests.json.
+sync_slack.py — Fetches info requests from #commercial-global, #aes-global and #success
+into data/requests.json, and customer feedback from #customer-feedback into data/feedback.json.
 
 Usage:
     pip install slack-sdk
@@ -31,6 +31,10 @@ CHANNELS = {
     "C081H6A0CVC": "aes-global",
     "CD2EU60KA": "success",
 }
+
+# Feedback channel — all messages captured (no keyword filter)
+FEEDBACK_CHANNEL_ID = "CKZELQY5T"
+FEEDBACK_CHANNEL_NAME = "customer-feedback"
 
 # Keywords that indicate an information request
 REQUEST_PATTERNS = [
@@ -207,12 +211,97 @@ def merge(data: dict, new_messages: list[dict]) -> int:
     return added
 
 
+def fetch_feedback(client: WebClient, channel_id: str, oldest_ts: str) -> list[dict]:
+    """Fetch ALL messages from the feedback channel (no keyword filter)."""
+    found = []
+    cursor = None
+
+    while True:
+        kwargs = dict(channel=channel_id, oldest=oldest_ts, limit=200)
+        if cursor:
+            kwargs["cursor"] = cursor
+
+        try:
+            resp = client.conversations_history(**kwargs)
+        except SlackApiError as e:
+            print(f"  Error fetching feedback channel: {e.response['error']}")
+            break
+
+        for msg in resp["messages"]:
+            text = msg.get("text", "")
+            if not text or msg.get("subtype"):
+                continue
+
+            ts = float(msg["ts"])
+            dt = datetime.fromtimestamp(ts, tz=timezone.utc)
+            date_str = dt.strftime("%Y-%m-%d")
+
+            user_id = msg.get("user", "")
+            try:
+                user_info = client.users_info(user=user_id)
+                author = user_info["user"]["profile"].get("real_name", user_id)
+            except Exception:
+                author = user_id
+
+            permalink = f"https://signalhq.slack.com/archives/{channel_id}/p{msg['ts'].replace('.', '')}"
+
+            found.append({
+                "date": date_str,
+                "author": author,
+                "text": text[:600],
+                "url": permalink,
+            })
+
+        if not resp.get("has_more"):
+            break
+        cursor = resp["response_metadata"].get("next_cursor")
+        time.sleep(0.5)
+
+    print(f"  feedback: found {len(found)} new messages")
+    return found
+
+
+def load_feedback(path: Path) -> dict:
+    if path.exists():
+        with open(path) as f:
+            return json.load(f)
+    return {"last_synced": "2024-01-01T00:00:00Z", "messages": []}
+
+
+def sync_feedback(client: WebClient, data_path: Path):
+    feedback = load_feedback(data_path)
+    existing_urls = {m["url"] for m in feedback.get("messages", [])}
+
+    # If no messages yet, fetch full history; otherwise fetch incrementally
+    if not existing_urls:
+        print(f"New channel #{FEEDBACK_CHANNEL_NAME} — fetching full history...")
+        oldest_ts = "0"
+    else:
+        last_sync_dt = datetime.fromisoformat(feedback["last_synced"].replace("Z", "+00:00"))
+        oldest_ts = str(last_sync_dt.timestamp())
+        print(f"#{FEEDBACK_CHANNEL_NAME} — fetching since {feedback['last_synced']}...")
+
+    new_msgs = fetch_feedback(client, FEEDBACK_CHANNEL_ID, oldest_ts)
+    added = 0
+    for msg in new_msgs:
+        if msg["url"] not in existing_urls:
+            feedback["messages"].append(msg)
+            existing_urls.add(msg["url"])
+            added += 1
+
+    feedback["last_synced"] = datetime.now(tz=timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    save(data_path, feedback)
+    print(f"  feedback: added {added} new messages. Total: {len(feedback['messages'])}")
+
+
 def main():
     token = os.environ.get("SLACK_BOT_TOKEN")
     if not token:
         raise SystemExit("Set the SLACK_BOT_TOKEN environment variable.")
 
     client = WebClient(token=token)
+
+    # ── Sync info requests ────────────────────────────────────────────────────
     data_path = Path(__file__).parent.parent / "data" / "requests.json"
     data = load_existing(data_path)
 
@@ -221,8 +310,6 @@ def main():
 
     all_new = []
     for channel_id, channel_name in CHANNELS.items():
-        # If we have no messages from this channel yet, fetch ALL history
-        # Otherwise just fetch since last sync (incremental)
         if not channel_has_existing_messages(data, channel_name):
             print(f"New channel #{channel_name} — fetching full history...")
             oldest_ts = "0"
@@ -235,9 +322,13 @@ def main():
 
     added = merge(data, all_new)
     data["last_synced"] = datetime.now(tz=timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
-
     save(data_path, data)
-    print(f"\nDone — added {added} new requests. Total: {sum(len(c['requests']) for c in data['categories'])}")
+    print(f"\nInfo requests: added {added} new. Total: {sum(len(c['requests']) for c in data['categories'])}")
+
+    # ── Sync feedback ─────────────────────────────────────────────────────────
+    print("\n── Syncing feedback ──")
+    feedback_path = Path(__file__).parent.parent / "data" / "feedback.json"
+    sync_feedback(client, feedback_path)
 
 
 if __name__ == "__main__":
