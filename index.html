@@ -226,10 +226,102 @@
       margin-top: 1rem;
     }
 
+    /* ── Tabs ── */
+    .tabs {
+      display: flex;
+      gap: 4px;
+      margin-bottom: 1.75rem;
+      border-bottom: 0.5px solid var(--border);
+      padding-bottom: 0;
+    }
+
+    .tab-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-muted);
+      padding: 8px 14px;
+      border-bottom: 2px solid transparent;
+      margin-bottom: -1px;
+      transition: color 0.15s, border-color 0.15s;
+    }
+
+    .tab-btn:hover { color: var(--text); }
+    .tab-btn.active { color: var(--text); border-bottom-color: var(--text); }
+
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+
+    /* ── Feedback list ── */
+    .feedback-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .feedback-count {
+      font-size: 12px;
+      color: var(--text-hint);
+    }
+
+    .feedback-search {
+      background: var(--surface);
+      border: 0.5px solid var(--border);
+      border-radius: var(--radius);
+      padding: 6px 10px;
+      font-size: 13px;
+      color: var(--text);
+      width: 220px;
+      outline: none;
+    }
+
+    .feedback-search:focus { border-color: var(--border-strong); }
+
+    .feedback-list {
+      background: var(--surface);
+      border: 0.5px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+    }
+
+    .feedback-item {
+      padding: 14px 16px;
+      border-bottom: 0.5px solid var(--border);
+    }
+
+    .feedback-item:last-child { border-bottom: none; }
+
+    .feedback-meta {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-bottom: 6px;
+    }
+
+    .feedback-author { font-size: 13px; font-weight: 500; }
+    .feedback-date { font-size: 11px; color: var(--text-hint); }
+    .feedback-text { font-size: 13px; color: var(--text-muted); line-height: 1.55; }
+    .feedback-link { font-size: 11px; color: #185FA5; margin-top: 5px; display: inline-block; text-decoration: none; }
+    .feedback-link:hover { text-decoration: underline; }
+
+    .feedback-empty {
+      padding: 2rem;
+      text-align: center;
+      font-size: 13px;
+      color: var(--text-hint);
+    }
+
     @media (max-width: 640px) {
       .metrics { grid-template-columns: repeat(2, 1fr); }
       .cat-grid { grid-template-columns: repeat(2, 1fr); }
       body { padding: 1rem; }
+      .feedback-search { width: 100%; }
     }
   </style>
 </head>
@@ -237,11 +329,18 @@
 
 <header>
   <div>
-    <h1>Info requests tracker</h1>
+    <h1>Signal AI — Slack Tracker</h1>
     <p>#commercial-global, #aes-global &amp; #success — since Jan 2024</p>
   </div>
   <div id="last-updated">Last synced: loading…</div>
 </header>
+
+<nav class="tabs">
+  <button class="tab-btn active" data-tab="requests">Info requests</button>
+  <button class="tab-btn" data-tab="feedback">Customer feedback</button>
+</nav>
+
+<div id="tab-requests" class="tab-panel active">
 
 <div class="metrics" id="metrics"></div>
 
@@ -268,7 +367,19 @@
   <div id="msg-list"></div>
 </div>
 
-<footer id="footer">Data loaded from <code>data/requests.json</code>. Run the sync script or trigger the GitHub Action to update.</footer>
+</div><!-- /tab-requests -->
+
+<div id="tab-feedback" class="tab-panel">
+  <div class="feedback-header">
+    <span class="feedback-count" id="feedback-count">Loading…</span>
+    <input class="feedback-search" id="feedback-search" type="text" placeholder="Search feedback…" />
+  </div>
+  <div class="feedback-list" id="feedback-list">
+    <div class="feedback-empty">Loading feedback…</div>
+  </div>
+</div><!-- /tab-feedback -->
+
+<footer id="footer">Data loaded from <code>data/requests.json</code> &amp; <code>data/feedback.json</code>. Syncs automatically every day at 7am UTC.</footer>
 
 <script>
 async function loadData() {
@@ -601,6 +712,65 @@ function openMonthPanel(monthKey, monthLabel) {
   panel.style.display = 'block';
   setTimeout(() => panel.scrollIntoView({behavior:'smooth', block:'nearest'}), 50);
 }
+
+// ── Tab switching ────────────────────────────────────────────────────────────
+document.querySelectorAll('.tab-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+    if (btn.dataset.tab === 'feedback' && !feedbackLoaded) loadFeedback();
+  });
+});
+
+// ── Feedback ─────────────────────────────────────────────────────────────────
+let feedbackLoaded = false;
+let allFeedback = [];
+
+async function loadFeedback() {
+  feedbackLoaded = true;
+  try {
+    const res = await fetch('data/feedback.json');
+    if (!res.ok) throw new Error('no file');
+    const data = await res.json();
+    allFeedback = data.messages || [];
+    renderFeedback(allFeedback);
+  } catch {
+    document.getElementById('feedback-list').innerHTML =
+      '<div class="feedback-empty">No feedback data found. Run the sync to populate this tab.</div>';
+    document.getElementById('feedback-count').textContent = '0 messages';
+  }
+}
+
+function renderFeedback(messages) {
+  const count = document.getElementById('feedback-count');
+  const list = document.getElementById('feedback-list');
+  count.textContent = messages.length + ' message' + (messages.length !== 1 ? 's' : '');
+
+  if (!messages.length) {
+    list.innerHTML = '<div class="feedback-empty">No messages match your search.</div>';
+    return;
+  }
+
+  const sorted = [...messages].sort((a, b) => b.date.localeCompare(a.date));
+  list.innerHTML = sorted.map(m => `
+    <div class="feedback-item">
+      <div class="feedback-meta">
+        <span class="feedback-author">${m.author}</span>
+        <span class="feedback-date">${fmtDate(m.date)}</span>
+      </div>
+      <div class="feedback-text">${m.text}</div>
+      <a class="feedback-link" href="${m.url}" target="_blank" rel="noopener">Open in Slack →</a>
+    </div>`).join('');
+}
+
+document.getElementById('feedback-search').addEventListener('input', e => {
+  const q = e.target.value.toLowerCase();
+  renderFeedback(q ? allFeedback.filter(m =>
+    m.text.toLowerCase().includes(q) || m.author.toLowerCase().includes(q)
+  ) : allFeedback);
+});
 
 loadData().then(render);
 </script>
