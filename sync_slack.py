@@ -29,6 +29,7 @@ except ImportError:
 CHANNELS = {
     "C04P01H413R": "commercial-global",
     "C081H6A0CVC": "aes-global",
+    "CD2EU60KA": "success",
 }
 
 # Keywords that indicate an information request
