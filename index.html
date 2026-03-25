@@ -106,12 +106,22 @@
       gap: 16px;
       font-size: 12px;
       color: var(--text-muted);
+      flex-wrap: wrap;
     }
 
     .legend span { display: flex; align-items: center; gap: 5px; }
     .legend-dot { width: 10px; height: 10px; border-radius: 2px; display: inline-block; }
 
     #tlChart-wrap { position: relative; width: 100%; height: 200px; }
+    #tlChart-empty {
+      display: none;
+      position: absolute;
+      inset: 0;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      color: var(--text-hint);
+    }
 
     .cat-grid {
       display: grid;
@@ -126,11 +136,12 @@
       border-radius: var(--radius-lg);
       padding: 14px;
       cursor: pointer;
-      transition: border-color 0.15s, box-shadow 0.15s;
+      transition: border-color 0.15s, box-shadow 0.15s, opacity 0.15s;
     }
 
     .cat-card:hover { border-color: var(--border-strong); }
     .cat-card.active { box-shadow: 0 0 0 1.5px var(--accent-color); border-color: var(--accent-color); }
+    .cat-card.empty { opacity: 0.35; cursor: default; pointer-events: none; }
 
     .cat-card .cat-name { font-size: 13px; font-weight: 500; margin-bottom: 8px; line-height: 1.35; }
     .cat-card .cat-count { font-size: 22px; font-weight: 500; }
@@ -230,9 +241,8 @@
     .tabs {
       display: flex;
       gap: 4px;
-      margin-bottom: 1.75rem;
+      margin-bottom: 0;
       border-bottom: 0.5px solid var(--border);
-      padding-bottom: 0;
     }
 
     .tab-btn {
@@ -246,6 +256,7 @@
       border-bottom: 2px solid transparent;
       margin-bottom: -1px;
       transition: color 0.15s, border-color 0.15s;
+      font-family: inherit;
     }
 
     .tab-btn:hover { color: var(--text); }
@@ -253,6 +264,54 @@
 
     .tab-panel { display: none; }
     .tab-panel.active { display: block; }
+
+    /* ── Range bar ── */
+    .range-bar {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 0 14px;
+      border-bottom: 0.5px solid var(--border);
+      margin-bottom: 1.75rem;
+      flex-wrap: wrap;
+    }
+
+    .range-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: var(--text-hint);
+      white-space: nowrap;
+    }
+
+    .range-pills {
+      display: flex;
+      gap: 4px;
+      flex-wrap: wrap;
+    }
+
+    .range-pill {
+      background: transparent;
+      border: 0.5px solid var(--border);
+      border-radius: 20px;
+      padding: 3px 12px;
+      font-size: 12px;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.13s;
+      font-family: inherit;
+    }
+
+    .range-pill:hover {
+      border-color: var(--border-strong);
+      color: var(--text);
+    }
+
+    .range-pill.active {
+      background: var(--text);
+      color: var(--bg);
+      border-color: var(--text);
+    }
 
     /* ── Feedback list ── */
     .feedback-header {
@@ -278,9 +337,12 @@
       color: var(--text);
       width: 220px;
       outline: none;
+      font-family: inherit;
+      transition: border-color 0.15s;
     }
 
     .feedback-search:focus { border-color: var(--border-strong); }
+    .feedback-search.has-value { border-color: #185FA5; }
 
     .feedback-list {
       background: var(--surface);
@@ -340,32 +402,49 @@
   <button class="tab-btn" data-tab="feedback">Customer feedback</button>
 </nav>
 
+<!-- Shared range bar -->
+<div class="range-bar">
+  <span class="range-label">Range</span>
+  <div class="range-pills" id="range-pills">
+    <button class="range-pill active" data-range="all">All time</button>
+    <button class="range-pill" data-range="2024">2024</button>
+    <button class="range-pill" data-range="2025">2025</button>
+    <button class="range-pill" data-range="2026">2026</button>
+    <button class="range-pill" data-range="3m">Last 3 mo</button>
+    <button class="range-pill" data-range="6m">Last 6 mo</button>
+    <button class="range-pill" data-range="12m">Last 12 mo</button>
+  </div>
+</div>
+
 <div id="tab-requests" class="tab-panel active">
 
-<div class="metrics" id="metrics"></div>
+  <div class="metrics" id="metrics"></div>
 
-<div class="chart-wrap">
-  <div class="chart-header">
-    <span class="chart-title">Requests over time</span>
-    <div class="legend">
-      <span><i class="legend-dot" style="background:#185FA5"></i>#commercial-global</span>
-      <span><i class="legend-dot" style="background:#1D9E75"></i>#aes-global</span>
-      <span><i class="legend-dot" style="background:#F57C00"></i>#success</span>
+  <div class="chart-wrap">
+    <div class="chart-header">
+      <span class="chart-title">Requests over time</span>
+      <div class="legend" id="req-legend">
+        <span><i class="legend-dot" style="background:#185FA5"></i>#commercial-global</span>
+        <span><i class="legend-dot" style="background:#1D9E75"></i>#aes-global</span>
+        <span><i class="legend-dot" style="background:#F57C00"></i>#success</span>
+      </div>
+    </div>
+    <div id="tlChart-wrap">
+      <canvas id="tlChart"></canvas>
+      <div id="tlChart-empty">No requests in selected range.</div>
     </div>
   </div>
-  <div id="tlChart-wrap"><canvas id="tlChart"></canvas></div>
-</div>
 
-<div class="section-label">Requests by category — click any card to see all messages</div>
-<div class="cat-grid" id="cat-grid"></div>
+  <div class="section-label">Requests by category — click any card to see all messages</div>
+  <div class="cat-grid" id="cat-grid"></div>
 
-<div id="msg-panel">
-  <div class="panel-header">
-    <span id="panel-title"></span>
-    <button class="panel-close" id="close-btn">×</button>
+  <div id="msg-panel">
+    <div class="panel-header">
+      <span id="panel-title"></span>
+      <button class="panel-close" id="close-btn">×</button>
+    </div>
+    <div id="msg-list"></div>
   </div>
-  <div id="msg-list"></div>
-</div>
 
 </div><!-- /tab-requests -->
 
@@ -377,7 +456,7 @@
 
   <div class="chart-wrap" style="margin-bottom:1.25rem">
     <div class="chart-header">
-      <span class="chart-title">Feedback over time</span>
+      <span class="chart-title" id="fb-chart-title">Feedback over time</span>
       <div class="legend" id="feedback-legend"></div>
     </div>
     <div style="position:relative;width:100%;height:200px"><canvas id="fbChart"></canvas></div>
@@ -389,22 +468,10 @@
   </div>
 </div><!-- /tab-feedback -->
 
-<footer id="footer">Data loaded from <code>data/requests.json</code> &amp; <code>data/feedback.json</code>. Syncs automatically every day at 7am UTC.</footer>
+<footer>Data loaded from <code>data/requests.json</code> &amp; <code>data/feedback.json</code>. Syncs automatically every day at 7am UTC.</footer>
 
 <script>
-async function loadData() {
-  // Load from data/requests.json (generated by the sync script)
-  // Falls back to embedded seed data if file not found
-  try {
-    const res = await fetch('data/requests.json');
-    if (!res.ok) throw new Error('no file');
-    return await res.json();
-  } catch {
-    return SEED_DATA;
-  }
-}
-
-// ── Seed data (populated from initial Slack research) ──────────────────────
+// ── Seed data ────────────────────────────────────────────────────────────────
 const SEED_DATA = {
   last_synced: "2026-03-13T00:00:00Z",
   categories: [
@@ -513,151 +580,199 @@ const SEED_DATA = {
   ]
 };
 
-// ── Build timeline data ─────────────────────────────────────────────────────
+// ── Load data ────────────────────────────────────────────────────────────────
+async function loadData() {
+  try {
+    const res = await fetch('data/requests.json');
+    if (!res.ok) throw new Error('no file');
+    return await res.json();
+  } catch {
+    return SEED_DATA;
+  }
+}
+
+// ── Date range ───────────────────────────────────────────────────────────────
+let activeRange = 'all';
+
+function getDateBounds() {
+  const now = new Date();
+  const today = now.toISOString().slice(0, 10);
+  if (activeRange === 'all')  return { from: '2000-01-01', to: '2099-12-31' };
+  if (activeRange === '2024') return { from: '2024-01-01', to: '2024-12-31' };
+  if (activeRange === '2025') return { from: '2025-01-01', to: '2025-12-31' };
+  if (activeRange === '2026') return { from: '2026-01-01', to: '2026-12-31' };
+  if (activeRange === '3m')  { const d = new Date(now); d.setMonth(d.getMonth() - 3);  return { from: d.toISOString().slice(0, 10), to: today }; }
+  if (activeRange === '6m')  { const d = new Date(now); d.setMonth(d.getMonth() - 6);  return { from: d.toISOString().slice(0, 10), to: today }; }
+  if (activeRange === '12m') { const d = new Date(now); d.setMonth(d.getMonth() - 12); return { from: d.toISOString().slice(0, 10), to: today }; }
+  return { from: '2000-01-01', to: '2099-12-31' };
+}
+
+function inRange(dateStr) {
+  const { from, to } = getDateBounds();
+  return dateStr >= from && dateStr <= to;
+}
+
+// ── Month helpers ─────────────────────────────────────────────────────────────
+const MO_NAMES = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+
+function getMonthsBetween(fromKey, toKey) {
+  // fromKey / toKey are 'YYYY-MM'
+  const labels = [], keys = [];
+  let [y, m] = fromKey.split('-').map(Number);
+  const [ey, em] = toKey.split('-').map(Number);
+  while (y < ey || (y === ey && m <= em)) {
+    const key = `${y}-${String(m).padStart(2, '0')}`;
+    labels.push(MO_NAMES[m - 1] + ' ' + String(y).slice(2));
+    keys.push(key);
+    if (m === 12) { y++; m = 1; } else m++;
+  }
+  return { labels, keys };
+}
+
+// ── Requests timeline ─────────────────────────────────────────────────────────
 function buildTimeline(categories) {
   const counts = {};
   categories.forEach(cat => {
-    cat.requests.forEach(r => {
-      const d = new Date(r.date);
-      const key = `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}`;
-      if (!counts[key]) counts[key] = {cg:0, aes:0, success:0};
+    cat.requests.filter(r => inRange(r.date)).forEach(r => {
+      const key = r.date.slice(0, 7);
+      if (!counts[key]) counts[key] = { cg: 0, aes: 0, success: 0 };
       if (r.channel === 'commercial-global') counts[key].cg++;
       else if (r.channel === 'success') counts[key].success++;
       else counts[key].aes++;
     });
   });
 
-  const sorted = Object.keys(counts).sort();
-  const moNames = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-  const labels = [], keys = [], cgData = [], aesData = [], successData = [];
-  if (sorted.length) {
-    const [sy, sm] = sorted[0].split('-').map(Number);
-    const [ey, em] = sorted[sorted.length-1].split('-').map(Number);
-    let y = sy, m = sm;
-    while (y < ey || (y === ey && m <= em)) {
-      const key = `${y}-${String(m).padStart(2,'0')}`;
-      const [, mo] = key.split('-');
-      labels.push(moNames[+mo-1]+' '+String(y).slice(2));
-      keys.push(key);
-      cgData.push(counts[key]?.cg || 0);
-      aesData.push(counts[key]?.aes || 0);
-      successData.push(counts[key]?.success || 0);
-      if (m === 12) { y++; m = 1; } else m++;
-    }
+  const dataKeys = Object.keys(counts).sort();
+  if (!dataKeys.length) return { labels: [], keys: [], cgData: [], aesData: [], successData: [] };
+
+  let fromKey, toKey;
+  if (activeRange === 'all') {
+    fromKey = dataKeys[0];
+    toKey = dataKeys[dataKeys.length - 1];
+  } else {
+    const b = getDateBounds();
+    fromKey = b.from.slice(0, 7);
+    toKey   = b.to.slice(0, 7);
   }
-  return {labels, keys, cgData, aesData, successData};
+
+  const { labels, keys } = getMonthsBetween(fromKey, toKey);
+  return {
+    labels,
+    keys,
+    cgData:      keys.map(k => counts[k]?.cg      || 0),
+    aesData:     keys.map(k => counts[k]?.aes     || 0),
+    successData: keys.map(k => counts[k]?.success || 0),
+  };
 }
 
-// ── Render ──────────────────────────────────────────────────────────────────
+// ── Requests render ───────────────────────────────────────────────────────────
 let tlChart = null;
-let _allData = null; // store globally for bar-click access
+let _allData = null;
 
 function render(data) {
   _allData = data;
-  const allReqs = data.categories.flatMap(c => c.requests);
+  const allReqs = data.categories.flatMap(c => c.requests).filter(r => inRange(r.date));
   const total = allReqs.length;
 
-  // Last synced
   document.getElementById('last-updated').textContent =
-    'Last synced: ' + new Date(data.last_synced).toLocaleDateString('en-GB', {day:'numeric', month:'short', year:'numeric'});
-
-  // Year breakdown
-  const y2024 = allReqs.filter(r => r.date.startsWith('2024')).length;
-  const y2025 = allReqs.filter(r => r.date.startsWith('2025')).length;
-
-  // Top category
-  const top = [...data.categories].sort((a,b) => b.requests.length - a.requests.length)[0];
-
-  // Peak month
-  const moCounts = {};
-  allReqs.forEach(r => {
-    const k = r.date.slice(0,7);
-    moCounts[k] = (moCounts[k]||0)+1;
-  });
-  const peakKey = Object.keys(moCounts).sort((a,b) => moCounts[b]-moCounts[a])[0];
-  const [py,pm] = peakKey.split('-');
-  const moNames = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-  const peakLabel = moNames[+pm-1]+' '+py;
+    'Last synced: ' + new Date(data.last_synced).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
 
   // Metrics
+  const cgCount  = allReqs.filter(r => r.channel === 'commercial-global').length;
+  const aesCount = allReqs.filter(r => r.channel === 'aes-global').length;
+
+  const top = [...data.categories]
+    .map(c => ({ ...c, n: c.requests.filter(r => inRange(r.date)).length }))
+    .sort((a, b) => b.n - a.n)[0];
+
+  const moCounts = {};
+  allReqs.forEach(r => { const k = r.date.slice(0, 7); moCounts[k] = (moCounts[k] || 0) + 1; });
+  const peakKey = Object.keys(moCounts).sort((a, b) => moCounts[b] - moCounts[a])[0];
+  const peakLabel = peakKey
+    ? MO_NAMES[+peakKey.slice(5) - 1] + ' ' + peakKey.slice(0, 4)
+    : '—';
+
+  const rangeSub = activeRange === 'all' ? 'all time' :
+    activeRange === '3m'  ? 'last 3 months' :
+    activeRange === '6m'  ? 'last 6 months' :
+    activeRange === '12m' ? 'last 12 months' : activeRange;
+
   document.getElementById('metrics').innerHTML = [
-    {label:'Total tracked requests', value:total, sub:'since Jan 2024'},
-    {label:'Requests in 2025', value:y2025, sub:`vs ${y2024} in 2024`},
-    {label:'Top category', value:top.name, big:false, sub:top.requests.length+' requests'},
-    {label:'Peak month', value:peakLabel, big:false, sub:moCounts[peakKey]+' requests'},
+    { label: 'Total requests',        value: total,                                         sub: rangeSub },
+    { label: '#commercial-global',    value: cgCount,                                        sub: 'of ' + total + ' in range' },
+    { label: 'Top category',          value: top?.n ? top.name : '—',  big: false,          sub: top?.n ? top.n + ' requests' : 'no data' },
+    { label: 'Peak month',            value: peakLabel,                big: false,           sub: peakKey ? moCounts[peakKey] + ' requests' : 'no data' },
   ].map(m => `
     <div class="metric">
       <div class="label">${m.label}</div>
-      <div class="value" style="font-size:${m.big===false?'15px':'24px'};margin-top:${m.big===false?'4px':'0'}">${m.value}</div>
+      <div class="value" style="font-size:${m.big === false ? '15px' : '24px'};margin-top:${m.big === false ? '4px' : '0'}">${m.value}</div>
       <div class="sub">${m.sub}</div>
     </div>`).join('');
 
   // Timeline chart
-  const {labels, keys, cgData, aesData, successData} = buildTimeline(data.categories);
-  if (tlChart) tlChart.destroy();
-  tlChart = new Chart(document.getElementById('tlChart'), {
-    type: 'bar',
-    data: {
-      labels,
-      datasets: [
-        {label:'#commercial-global', data:cgData, backgroundColor:'#185FA5', stack:'s'},
-        {label:'#aes-global', data:aesData, backgroundColor:'#1D9E75', stack:'s'},
-        {label:'#success', data:successData, backgroundColor:'#F57C00', stack:'s'}
-      ]
-    },
-    options: {
-      responsive:true, maintainAspectRatio:false,
-      cursor: 'pointer',
-      plugins:{
-        legend:{display:false},
-        tooltip:{mode:'index',intersect:false}
+  const { labels, keys, cgData, aesData, successData } = buildTimeline(data.categories);
+
+  if (tlChart) { tlChart.destroy(); tlChart = null; }
+
+  const emptyEl = document.getElementById('tlChart-empty');
+  if (!labels.length) {
+    emptyEl.style.display = 'flex';
+  } else {
+    emptyEl.style.display = 'none';
+    tlChart = new Chart(document.getElementById('tlChart'), {
+      type: 'bar',
+      data: {
+        labels,
+        datasets: [
+          { label: '#commercial-global', data: cgData,      backgroundColor: '#185FA5', stack: 's' },
+          { label: '#aes-global',        data: aesData,     backgroundColor: '#1D9E75', stack: 's' },
+          { label: '#success',           data: successData, backgroundColor: '#F57C00', stack: 's' },
+        ]
       },
-      scales:{
-        x:{stacked:true, grid:{display:false}, ticks:{font:{size:10}, maxRotation:45, autoSkip:true, maxTicksLimit:16}},
-        y:{stacked:true, beginAtZero:true, grid:{color:'rgba(128,128,128,0.1)'}, ticks:{stepSize:2, font:{size:10}}}
-      },
-      onClick(evt, elements) {
-        if (!elements.length) return;
-        const idx = elements[0].index;
-        const monthKey = keys[idx];
-        const monthLabel = labels[idx];
-        document.querySelectorAll('.cat-card').forEach(c => c.classList.remove('active'));
-        openMonthPanel(monthKey, monthLabel);
-      },
-      onHover(evt) {
-        evt.native.target.style.cursor = 'pointer';
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: { legend: { display: false }, tooltip: { mode: 'index', intersect: false } },
+        scales: {
+          x: { stacked: true, grid: { display: false }, ticks: { font: { size: 10 }, maxRotation: 45, autoSkip: true, maxTicksLimit: 16 } },
+          y: { stacked: true, beginAtZero: true, grid: { color: 'rgba(128,128,128,0.1)' }, ticks: { stepSize: 2, font: { size: 10 } } }
+        },
+        onClick(evt, elements) {
+          if (!elements.length) return;
+          document.querySelectorAll('.cat-card').forEach(c => c.classList.remove('active'));
+          openMonthPanel(keys[elements[0].index], labels[elements[0].index]);
+        },
+        onHover(evt) { evt.native.target.style.cursor = 'pointer'; }
       }
-    }
-  });
+    });
+  }
 
   // Category grid
   const grid = document.getElementById('cat-grid');
   grid.innerHTML = '';
   data.categories.forEach(cat => {
+    const filtered = cat.requests.filter(r => inRange(r.date));
     const card = document.createElement('div');
-    card.className = 'cat-card';
+    card.className = 'cat-card' + (filtered.length === 0 ? ' empty' : '');
     card.style.setProperty('--accent-color', cat.color);
     card.innerHTML = `
       <div class="cat-name">${cat.name}</div>
-      <div class="cat-count" style="color:${cat.color}">${cat.requests.length}</div>
+      <div class="cat-count" style="color:${filtered.length ? cat.color : 'var(--text-hint)'}">${filtered.length}</div>
       <div class="cat-sub">requests tracked</div>`;
-    card.addEventListener('click', () => {
-      document.querySelectorAll('.cat-card').forEach(c => c.classList.remove('active'));
-      card.classList.add('active');
-      openPanel(cat);
-    });
+    if (filtered.length > 0) {
+      card.addEventListener('click', () => {
+        document.querySelectorAll('.cat-card').forEach(c => c.classList.remove('active'));
+        card.classList.add('active');
+        openPanel(cat, filtered);
+      });
+    }
     grid.appendChild(card);
-  });
-
-  document.getElementById('close-btn').addEventListener('click', () => {
-    document.getElementById('msg-panel').style.display = 'none';
-    document.querySelectorAll('.cat-card').forEach(c => c.classList.remove('active'));
   });
 }
 
+// ── Panel helpers ─────────────────────────────────────────────────────────────
 function fmtDate(d) {
-  const [y,m,day] = d.split('-');
-  return ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'][+m-1]+' '+day+', '+y;
+  const [y, m, day] = d.split('-');
+  return MO_NAMES[+m - 1] + ' ' + day + ', ' + y;
 }
 
 function channelClass(ch) {
@@ -667,12 +782,13 @@ function channelClass(ch) {
   return 'ch-aes';
 }
 
-function openPanel(cat) {
+function openPanel(cat, filteredReqs) {
   const panel = document.getElementById('msg-panel');
-  document.getElementById('panel-title').textContent = cat.name + ' — ' + cat.requests.length + ' requests tracked';
+  document.getElementById('panel-title').textContent =
+    cat.name + ' — ' + filteredReqs.length + ' request' + (filteredReqs.length !== 1 ? 's' : '') + ' in range';
 
-  const cutoff = Date.now() - 30*24*60*60*1000;
-  const sorted = [...cat.requests].sort((a,b) => a.date.localeCompare(b.date));
+  const cutoff = Date.now() - 30 * 24 * 60 * 60 * 1000;
+  const sorted = [...filteredReqs].sort((a, b) => a.date.localeCompare(b.date));
 
   document.getElementById('msg-list').innerHTML = sorted.map(r => {
     const isNew = new Date(r.date).getTime() >= cutoff;
@@ -689,25 +805,22 @@ function openPanel(cat) {
   }).join('');
 
   panel.style.display = 'block';
-  setTimeout(() => panel.scrollIntoView({behavior:'smooth', block:'nearest'}), 50);
+  setTimeout(() => panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 50);
 }
 
 function openMonthPanel(monthKey, monthLabel) {
   if (!_allData) return;
-  const allReqs = _allData.categories.flatMap(c => c.requests);
-  const filtered = allReqs
-    .filter(r => r.date.startsWith(monthKey))
-    .sort((a,b) => a.date.localeCompare(b.date));
+  const filtered = _allData.categories
+    .flatMap(c => c.requests)
+    .filter(r => r.date.startsWith(monthKey) && inRange(r.date))
+    .sort((a, b) => a.date.localeCompare(b.date));
 
   const panel = document.getElementById('msg-panel');
   document.getElementById('panel-title').textContent =
     monthLabel + ' — ' + filtered.length + ' request' + (filtered.length !== 1 ? 's' : '');
 
-  if (!filtered.length) {
-    document.getElementById('msg-list').innerHTML =
-      '<div class="msg-item" style="color:var(--text-hint);font-size:13px">No requests recorded this month.</div>';
-  } else {
-    document.getElementById('msg-list').innerHTML = filtered.map(r => `
+  document.getElementById('msg-list').innerHTML = filtered.length
+    ? filtered.map(r => `
       <div class="msg-item">
         <div class="msg-meta">
           <span class="msg-author">${r.author}</span>
@@ -716,37 +829,77 @@ function openMonthPanel(monthKey, monthLabel) {
         </div>
         <div class="msg-text">${r.text}</div>
         <a class="msg-link" href="${r.url}" target="_blank" rel="noopener">Open in Slack →</a>
-      </div>`).join('');
-  }
+      </div>`).join('')
+    : '<div class="msg-item" style="color:var(--text-hint);font-size:13px">No requests recorded this month.</div>';
 
   panel.style.display = 'block';
-  setTimeout(() => panel.scrollIntoView({behavior:'smooth', block:'nearest'}), 50);
+  setTimeout(() => panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 50);
 }
 
-// ── Tab switching ────────────────────────────────────────────────────────────
+document.getElementById('close-btn').addEventListener('click', () => {
+  document.getElementById('msg-panel').style.display = 'none';
+  document.querySelectorAll('.cat-card').forEach(c => c.classList.remove('active'));
+});
+
+// ── Range pill interactions ───────────────────────────────────────────────────
+function rerenderActiveTab() {
+  const activeTab = document.querySelector('.tab-btn.active')?.dataset.tab;
+  if (activeTab === 'requests') {
+    if (_allData) {
+      document.getElementById('msg-panel').style.display = 'none';
+      document.querySelectorAll('.cat-card').forEach(c => c.classList.remove('active'));
+      render(_allData);
+    }
+  } else if (activeTab === 'feedback') {
+    if (feedbackLoaded) {
+      rebuildFeedbackTimeline();
+      renderFeedbackCats();
+      applyFeedbackFilters();
+    }
+  }
+}
+
+document.getElementById('range-pills').addEventListener('click', e => {
+  const pill = e.target.closest('.range-pill');
+  if (!pill) return;
+  activeRange = pill.dataset.range;
+  document.querySelectorAll('.range-pill').forEach(p => p.classList.remove('active'));
+  pill.classList.add('active');
+  rerenderActiveTab();
+});
+
+// ── Tab switching ─────────────────────────────────────────────────────────────
 document.querySelectorAll('.tab-btn').forEach(btn => {
   btn.addEventListener('click', () => {
     document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
     document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
     btn.classList.add('active');
     document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
-    if (btn.dataset.tab === 'feedback' && !feedbackLoaded) loadFeedback();
+    if (btn.dataset.tab === 'feedback') {
+      if (!feedbackLoaded) {
+        loadFeedback();
+      } else {
+        rebuildFeedbackTimeline();
+        renderFeedbackCats();
+        applyFeedbackFilters();
+      }
+    }
   });
 });
 
-// ── Feedback ─────────────────────────────────────────────────────────────────
+// ── Feedback ──────────────────────────────────────────────────────────────────
 let feedbackLoaded = false;
 let allFeedback = [];
 let activeFeedbackCat = null;
 
 const FEEDBACK_CATEGORIES = [
-  { id: 'positive',  name: 'Positive feedback',   color: '#1D9E75' },
-  { id: 'askaiq',    name: 'AI & AskAIQ',          color: '#534AB7' },
-  { id: 'content',   name: 'Content & sources',    color: '#854F0B' },
-  { id: 'search',    name: 'Search & filters',     color: '#185FA5' },
-  { id: 'alerts',    name: 'Alerts & bulletins',   color: '#0F6E56' },
-  { id: 'exports',   name: 'Exports & reporting',  color: '#993C1D' },
-  { id: 'admin',     name: 'Admin & permissions',  color: '#5F5E5A' },
+  { id: 'positive', name: 'Positive feedback',  color: '#1D9E75' },
+  { id: 'askaiq',   name: 'AI & AskAIQ',         color: '#534AB7' },
+  { id: 'content',  name: 'Content & sources',   color: '#854F0B' },
+  { id: 'search',   name: 'Search & filters',    color: '#185FA5' },
+  { id: 'alerts',   name: 'Alerts & bulletins',  color: '#0F6E56' },
+  { id: 'exports',  name: 'Exports & reporting', color: '#993C1D' },
+  { id: 'admin',    name: 'Admin & permissions', color: '#5F5E5A' },
 ];
 
 let fbChart = null;
@@ -759,26 +912,37 @@ function buildFeedbackTimeline(messages) {
     if (!counts[key]) counts[key] = {};
     counts[key][m.category] = (counts[key][m.category] || 0) + 1;
   });
-  const sorted = Object.keys(counts).sort();
-  if (!sorted.length) return { labels: [], keys: [], datasets: [], counts: {} };
-  const [sy, sm] = sorted[0].split('-').map(Number);
-  const [ey, em] = sorted[sorted.length - 1].split('-').map(Number);
-  const moNames = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-  const labels = [], keys = [];
-  let y = sy, m = sm;
-  while (y < ey || (y === ey && m <= em)) {
-    const key = `${y}-${String(m).padStart(2,'0')}`;
-    labels.push(moNames[m - 1] + ' ' + String(y).slice(2));
-    keys.push(key);
-    if (m === 12) { y++; m = 1; } else m++;
+
+  const dataKeys = Object.keys(counts).sort();
+  if (!dataKeys.length) return { labels: [], keys: [], datasets: [], counts: {} };
+
+  let fromKey, toKey;
+  if (activeRange === 'all') {
+    fromKey = dataKeys[0];
+    toKey   = dataKeys[dataKeys.length - 1];
+  } else {
+    const b = getDateBounds();
+    fromKey = b.from.slice(0, 7);
+    toKey   = b.to.slice(0, 7);
   }
+
+  const { labels, keys } = getMonthsBetween(fromKey, toKey);
   const datasets = FEEDBACK_CATEGORIES.map(cat => ({
     label: cat.name,
     data: keys.map(k => counts[k]?.[cat.id] || 0),
     backgroundColor: cat.color,
     stack: 's',
   }));
+
   return { labels, keys, datasets, counts };
+}
+
+// Rebuild _fbKeys / _fbCounts from the current range (used for trend arrows in cat pills)
+function rebuildFeedbackTimeline() {
+  const rf = allFeedback.filter(m => inRange(m.date));
+  const tl = buildFeedbackTimeline(rf);
+  _fbKeys = tl.keys;
+  _fbCounts = tl.counts;
 }
 
 function getTrend(counts, keys, catId) {
@@ -790,14 +954,17 @@ function getTrend(counts, keys, catId) {
 
 function renderFeedbackChart(messages, highlightCatId = null) {
   const { labels, keys, datasets, counts } = buildFeedbackTimeline(messages);
+  // Update globals so trend arrows stay accurate
+  if (keys.length) { _fbKeys = keys; _fbCounts = counts; }
+
+  document.getElementById('feedback-legend').innerHTML = !highlightCatId
+    ? FEEDBACK_CATEGORIES.map(cat =>
+        `<span><i class="legend-dot" style="background:${cat.color}"></i>${cat.name}</span>`
+      ).join('')
+    : '';
+
+  if (fbChart) { fbChart.destroy(); fbChart = null; }
   if (!labels.length) return;
-  _fbKeys = keys; _fbCounts = counts;
-
-  document.getElementById('feedback-legend').innerHTML = FEEDBACK_CATEGORIES.map(cat =>
-    `<span><i class="legend-dot" style="background:${cat.color}"></i>${cat.name}</span>`
-  ).join('');
-
-  if (fbChart) fbChart.destroy();
 
   if (highlightCatId) {
     const cat = FEEDBACK_CATEGORIES.find(c => c.id === highlightCatId);
@@ -835,11 +1002,11 @@ function renderFeedbackChart(messages, highlightCatId = null) {
         },
         onClick(evt, elements) {
           if (!elements.length) return;
-          const monthKey = keys[elements[0].index];
+          const monthKey   = keys[elements[0].index];
           const monthLabel = labels[elements[0].index];
           activeFeedbackCat = null;
           document.querySelectorAll('.cat-filter-btn').forEach(b => b.style.boxShadow = 'none');
-          const filtered = allFeedback.filter(m => m.date.startsWith(monthKey));
+          const filtered = allFeedback.filter(m => m.date.startsWith(monthKey) && inRange(m.date));
           document.getElementById('feedback-count').textContent =
             monthLabel + ' — ' + filtered.length + ' message' + (filtered.length !== 1 ? 's' : '');
           renderFeedback(filtered);
@@ -850,6 +1017,80 @@ function renderFeedbackChart(messages, highlightCatId = null) {
   }
 }
 
+// ── Search-frequency chart ────────────────────────────────────────────────────
+function renderSearchFreqChart(query) {
+  const rangeFiltered = allFeedback.filter(m => inRange(m.date));
+  const pool = activeFeedbackCat
+    ? rangeFiltered.filter(m => m.category === activeFeedbackCat)
+    : rangeFiltered;
+
+  const q = query.toLowerCase();
+  const matching = pool.filter(m =>
+    m.text.toLowerCase().includes(q) || m.author.toLowerCase().includes(q)
+  );
+
+  // Per-month counts of matching messages
+  const counts = {};
+  matching.forEach(m => {
+    const key = m.date.slice(0, 7);
+    counts[key] = (counts[key] || 0) + 1;
+  });
+
+  // X axis spans the full current range (even months with 0 matches)
+  const dataKeys = [...new Set(rangeFiltered.map(m => m.date.slice(0, 7)))].sort();
+  if (!dataKeys.length) return;
+
+  let fromKey, toKey;
+  if (activeRange === 'all') {
+    fromKey = dataKeys[0];
+    toKey   = dataKeys[dataKeys.length - 1];
+  } else {
+    const b = getDateBounds();
+    fromKey = b.from.slice(0, 7);
+    toKey   = b.to.slice(0, 7);
+  }
+
+  const { labels, keys } = getMonthsBetween(fromKey, toKey);
+
+  document.getElementById('fb-chart-title').textContent = `Mentions of "${query}" over time`;
+  document.getElementById('feedback-legend').innerHTML =
+    `<span style="font-size:11px;color:var(--text-hint)">${matching.length} match${matching.length !== 1 ? 'es' : ''} in range</span>`;
+
+  if (fbChart) { fbChart.destroy(); fbChart = null; }
+
+  fbChart = new Chart(document.getElementById('fbChart'), {
+    type: 'bar',
+    data: {
+      labels,
+      datasets: [{
+        label: `"${query}"`,
+        data: keys.map(k => counts[k] || 0),
+        backgroundColor: 'rgba(24, 95, 165, 0.45)',
+        borderColor: '#185FA5',
+        borderWidth: 1,
+        borderRadius: 3,
+      }]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          mode: 'index', intersect: false,
+          callbacks: {
+            label: item => ` ${item.raw} match${item.raw !== 1 ? 'es' : ''}`
+          }
+        }
+      },
+      scales: {
+        x: { grid: { display: false }, ticks: { font: { size: 10 }, maxRotation: 45, autoSkip: true, maxTicksLimit: 16 } },
+        y: { beginAtZero: true, grid: { color: 'rgba(128,128,128,0.1)' }, ticks: { precision: 0, font: { size: 10 } } }
+      }
+    }
+  });
+}
+
+// ── Load & render feedback ────────────────────────────────────────────────────
 async function loadFeedback() {
   feedbackLoaded = true;
   try {
@@ -857,9 +1098,10 @@ async function loadFeedback() {
     if (!res.ok) throw new Error('no file');
     const data = await res.json();
     allFeedback = data.messages || [];
-    renderFeedbackChart(allFeedback);
+    rebuildFeedbackTimeline();
+    renderFeedbackChart(allFeedback.filter(m => inRange(m.date)));
     renderFeedbackCats();
-    renderFeedback(allFeedback);
+    applyFeedbackFilters();
   } catch {
     document.getElementById('feedback-list').innerHTML =
       '<div class="feedback-empty">No feedback data found. Run the sync to populate this tab.</div>';
@@ -869,8 +1111,9 @@ async function loadFeedback() {
 
 function renderFeedbackCats() {
   const container = document.getElementById('feedback-cats');
+  const rf = allFeedback.filter(m => inRange(m.date));
   const counts = {};
-  allFeedback.forEach(m => { counts[m.category] = (counts[m.category] || 0) + 1; });
+  rf.forEach(m => { counts[m.category] = (counts[m.category] || 0) + 1; });
 
   container.innerHTML = FEEDBACK_CATEGORIES.map(cat => {
     const n = counts[cat.id] || 0;
@@ -880,7 +1123,7 @@ function renderFeedbackCats() {
       `<span style="font-size:10px;font-weight:600;margin-left:2px;color:${trend > 0 ? '#1D9E75' : trend < 0 ? '#E53E3E' : 'var(--text-hint)'}">${trend > 0 ? '↑' : trend < 0 ? '↓' : '→'}${Math.abs(trend)}%</span>`;
     return `<button class="cat-filter-btn" data-cat="${cat.id}"
       style="background:var(--surface);border:0.5px solid var(--border);border-radius:8px;
-      padding:7px 12px;font-size:12px;cursor:pointer;color:var(--text-muted);
+      padding:7px 12px;font-size:12px;cursor:pointer;color:var(--text-muted);font-family:inherit;
       display:flex;align-items:center;gap:6px;transition:border-color 0.15s">
       <span style="width:8px;height:8px;border-radius:2px;background:${cat.color};display:inline-block"></span>
       ${cat.name} <span style="color:${cat.color};font-weight:500">${n}</span>${trendHtml}
@@ -888,18 +1131,22 @@ function renderFeedbackCats() {
   }).join('');
 
   container.querySelectorAll('.cat-filter-btn').forEach(btn => {
+    // Restore active highlight if applicable
+    if (btn.dataset.cat === activeFeedbackCat) {
+      const color = FEEDBACK_CATEGORIES.find(c => c.id === activeFeedbackCat)?.color;
+      if (color) btn.style.boxShadow = `0 0 0 1.5px ${color}`;
+    }
+
     btn.addEventListener('click', () => {
       const cat = btn.dataset.cat;
       if (activeFeedbackCat === cat) {
         activeFeedbackCat = null;
         container.querySelectorAll('.cat-filter-btn').forEach(b => b.style.boxShadow = 'none');
-        renderFeedbackChart(allFeedback, null);
       } else {
         activeFeedbackCat = cat;
         const color = FEEDBACK_CATEGORIES.find(c => c.id === cat).color;
         container.querySelectorAll('.cat-filter-btn').forEach(b =>
           b.style.boxShadow = b.dataset.cat === cat ? `0 0 0 1.5px ${color}` : 'none');
-        renderFeedbackChart(allFeedback, cat);
       }
       applyFeedbackFilters();
     });
@@ -907,19 +1154,31 @@ function renderFeedbackCats() {
 }
 
 function applyFeedbackFilters() {
-  const q = document.getElementById('feedback-search').value.toLowerCase();
-  let filtered = allFeedback;
+  const q = document.getElementById('feedback-search').value.trim().toLowerCase();
+  const rf = allFeedback.filter(m => inRange(m.date));
+
+  let filtered = rf;
   if (activeFeedbackCat) filtered = filtered.filter(m => m.category === activeFeedbackCat);
   if (q) filtered = filtered.filter(m =>
-    m.text.toLowerCase().includes(q) || m.author.toLowerCase().includes(q));
+    m.text.toLowerCase().includes(q) || m.author.toLowerCase().includes(q)
+  );
+
+  // Update chart: search query → frequency chart; otherwise normal chart
+  if (q) {
+    renderSearchFreqChart(q);
+  } else {
+    document.getElementById('fb-chart-title').textContent = 'Feedback over time';
+    renderFeedbackChart(rf, activeFeedbackCat || null);
+  }
+
   renderFeedback(filtered);
 }
 
 function renderFeedback(messages) {
-  const count = document.getElementById('feedback-count');
-  const list = document.getElementById('feedback-list');
-  count.textContent = messages.length + ' message' + (messages.length !== 1 ? 's' : '');
+  document.getElementById('feedback-count').textContent =
+    messages.length + ' message' + (messages.length !== 1 ? 's' : '');
 
+  const list = document.getElementById('feedback-list');
   if (!messages.length) {
     list.innerHTML = '<div class="feedback-empty">No messages match your search.</div>';
     return;
@@ -940,8 +1199,13 @@ function renderFeedback(messages) {
   }).join('');
 }
 
-document.getElementById('feedback-search').addEventListener('input', applyFeedbackFilters);
+// Highlight search input border when it has a value
+document.getElementById('feedback-search').addEventListener('input', function () {
+  this.classList.toggle('has-value', this.value.trim().length > 0);
+  applyFeedbackFilters();
+});
 
+// Boot
 loadData().then(render);
 </script>
 </body>
