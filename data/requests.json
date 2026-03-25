@@ -1,5 +1,5 @@
 {
-  "last_synced": "2026-03-24T07:57:19Z",
+  "last_synced": "2026-03-25T07:56:49Z",
   "categories": [
     {
       "id": "risk",
@@ -1699,6 +1699,20 @@
           "channel": "success",
           "text": "Can someone in the UK show Isabel how to do a hangout?",
           "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1540821813001300"
+        },
+        {
+          "date": "2026-03-24",
+          "author": "Maria Monteiro",
+          "channel": "commercial-global",
+          "text": "Do we have any updates on GEO that we can share with clients please? Ocado raised this during a call as it's becoming increasingly more relevant for them",
+          "url": "https://signalhq.slack.com/archives/C04P01H413R/p1774352970936009"
+        },
+        {
+          "date": "2026-03-24",
+          "author": "Rich Hope",
+          "channel": "aes-global",
+          "text": "Looking at using Gong for flows and does anyone know if Gong knows when there is a bounceback and records it for future flows? I suspect not.",
+          "url": "https://signalhq.slack.com/archives/C081H6A0CVC/p1774372546101359"
         }
       ]
     }
