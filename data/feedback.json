@@ -1,5 +1,5 @@
 {
-  "last_synced": "2026-03-25T07:56:50Z",
+  "last_synced": "2026-03-26T08:04:42Z",
   "messages": [
     {
       "date": "2026-03-23",
@@ -28938,6 +28938,13 @@
       "text": "Prosek Partners would like to have reach filters directly on the search so they can save their searches looking for specific reach ranges.",
       "url": "https://signalhq.slack.com/archives/CKZELQY5T/p1774340567834389",
       "category": "search"
+    },
+    {
+      "date": "2026-03-25",
+      "author": "Jermaine Roberts",
+      "text": "Off the back of an Intercom chat w/ *Paypal*, the client uploaded custom content to the platform.  They included Paypal in the headline and flagged the entity as a \"Headline\" Mention Position, but salience was set to any so it did not appear as a High Salience mention.  I instructed them to adjust the salience as well, but thought it would be worth a shout here",
+      "url": "https://signalhq.slack.com/archives/CKZELQY5T/p1774467289271439",
+      "category": "content"
     }
   ]
 }
