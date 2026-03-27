@@ -1,5 +1,5 @@
 {
-  "last_synced": "2026-03-26T08:04:42Z",
+  "last_synced": "2026-03-27T08:01:42Z",
   "categories": [
     {
       "id": "risk",
@@ -327,6 +327,13 @@
           "channel": "success",
           "text": "Can someone please give me the monitor teams emails",
           "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1557839330000700"
+        },
+        {
+          "date": "2026-03-26",
+          "author": "RJ Zayas",
+          "channel": "aes-global",
+          "text": "Do we have a version already downloadable without submitting the form?",
+          "url": "https://signalhq.slack.com/archives/C081H6A0CVC/p1774535163387759"
         }
       ]
     },
@@ -684,6 +691,13 @@
           "channel": "aes-global",
           "text": "Does anyone have any decent word/google doc RFI responses for everything we do? Ideally for finance.",
           "url": "https://signalhq.slack.com/archives/C081H6A0CVC/p1751039057187799"
+        },
+        {
+          "date": "2026-03-26",
+          "author": "Zach Watson",
+          "channel": "aes-global",
+          "text": "<@U01PVB6LBHS> many thanks for creating the memo flow for the team! Does anyone else have concerns about the amount of links put in the emal for cold outreach tho",
+          "url": "https://signalhq.slack.com/archives/C081H6A0CVC/p1774541830979649"
         }
       ]
     },
@@ -1713,6 +1727,13 @@
           "channel": "aes-global",
           "text": "Looking at using Gong for flows and does anyone know if Gong knows when there is a bounceback and records it for future flows? I suspect not.",
           "url": "https://signalhq.slack.com/archives/C081H6A0CVC/p1774372546101359"
+        },
+        {
+          "date": "2026-03-26",
+          "author": "Will Phillips",
+          "channel": "aes-global",
+          "text": "anyone know what Cision's content in Scandinavia is like?",
+          "url": "https://signalhq.slack.com/archives/C081H6A0CVC/p1774521124591389"
         }
       ]
     }

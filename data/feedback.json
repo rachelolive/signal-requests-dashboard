@@ -1,5 +1,5 @@
 {
-  "last_synced": "2026-03-26T08:04:42Z",
+  "last_synced": "2026-03-27T08:01:43Z",
   "messages": [
     {
       "date": "2026-03-23",
@@ -28945,6 +28945,13 @@
       "text": "Off the back of an Intercom chat w/ *Paypal*, the client uploaded custom content to the platform.  They included Paypal in the headline and flagged the entity as a \"Headline\" Mention Position, but salience was set to any so it did not appear as a High Salience mention.  I instructed them to adjust the salience as well, but thought it would be worth a shout here",
       "url": "https://signalhq.slack.com/archives/CKZELQY5T/p1774467289271439",
       "category": "content"
+    },
+    {
+      "date": "2026-03-26",
+      "author": "Mariana Carlota",
+      "text": "Hi! With the new search layout, while we are editing, the page automatically scrolls down when we remove or add anything to the search (and sometimes at random as well). It is frustrating to have the page constantly moving while editing a complex search. This screen recording is an example",
+      "url": "https://signalhq.slack.com/archives/CKZELQY5T/p1774536855953049",
+      "category": "search"
     }
   ]
 }
