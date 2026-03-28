@@ -1,5 +1,5 @@
 {
-  "last_synced": "2026-03-27T08:01:42Z",
+  "last_synced": "2026-03-28T07:47:59Z",
   "categories": [
     {
       "id": "risk",
@@ -698,6 +698,13 @@
           "channel": "aes-global",
           "text": "<@U01PVB6LBHS> many thanks for creating the memo flow for the team! Does anyone else have concerns about the amount of links put in the emal for cold outreach tho",
           "url": "https://signalhq.slack.com/archives/C081H6A0CVC/p1774541830979649"
+        },
+        {
+          "date": "2026-03-27",
+          "author": "Peter Read",
+          "channel": "aes-global",
+          "text": "Do we have a specific approach for dealing with agencies who are interested in Memo's data? I've had some interest off the back of the marketing emails",
+          "url": "https://signalhq.slack.com/archives/C081H6A0CVC/p1774612931388869"
         }
       ]
     },
