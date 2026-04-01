@@ -1,5 +1,5 @@
 {
-  "last_synced": "2026-03-31T08:11:47Z",
+  "last_synced": "2026-04-01T08:17:55Z",
   "messages": [
     {
       "date": "2026-03-23",
@@ -28966,6 +28966,13 @@
       "text": "Hi All, we shared this Premium Social feedback previously but raising it here again because it's becoming a huge challenge for us on the KPMG Engine Room account. Every time KPMG need to set up a traditional media Bulletin for stories/issues they want to monitor, they also ask for a corresponding Premium Social alert. KPMG deals with crisis on a daily basis. The 10 Premium Social alert maximum per Workspace limitation is causing a lot of confusion (between Client and Signal), disorganisation, and quite counterproductive if we want the client to continue adopting the Premium Social offering. Yo",
       "url": "https://signalhq.slack.com/archives/CKZELQY5T/p1774861882905649",
       "category": "content"
+    },
+    {
+      "date": "2026-03-31",
+      "author": "Chrystal Wong",
+      "text": "with ambiguous spokespeople names, it's difficult to know who's associated with which org. if this can be specified within the dropdown, it'd be super helpful",
+      "url": "https://signalhq.slack.com/archives/CKZELQY5T/p1774968802970139",
+      "category": "search"
     }
   ]
 }

@@ -1,5 +1,5 @@
 {
-  "last_synced": "2026-03-31T08:11:47Z",
+  "last_synced": "2026-04-01T08:17:55Z",
   "categories": [
     {
       "id": "risk",
@@ -334,6 +334,13 @@
           "channel": "aes-global",
           "text": "Do we have a version already downloadable without submitting the form?",
           "url": "https://signalhq.slack.com/archives/C081H6A0CVC/p1774535163387759"
+        },
+        {
+          "date": "2026-03-31",
+          "author": "Rich Hope",
+          "channel": "aes-global",
+          "text": "BNY have requested help and wants to know if Signal has the ability to flag or monitor for disinformation/misinformation about BNY.\n\nDoes anyone have any experience in this specific area of know if we have provided these kinds of services.",
+          "url": "https://signalhq.slack.com/archives/C081H6A0CVC/p1774955711455839"
         }
       ]
     },
@@ -1741,6 +1748,13 @@
           "channel": "aes-global",
           "text": "anyone know what Cision's content in Scandinavia is like?",
           "url": "https://signalhq.slack.com/archives/C081H6A0CVC/p1774521124591389"
+        },
+        {
+          "date": "2026-03-31",
+          "author": "Zach Watson",
+          "channel": "aes-global",
+          "text": "hey <!here> - can someone help with the following question given the new change with TV Eyes?\n\n can you confirm whether there are any legal constraints around sharing broadcast mentions via API?",
+          "url": "https://signalhq.slack.com/archives/C081H6A0CVC/p1774962276033699"
         }
       ]
     }
