@@ -1,5 +1,5 @@
 {
-  "last_synced": "2026-04-01T08:17:55Z",
+  "last_synced": "2026-04-02T08:10:06Z",
   "categories": [
     {
       "id": "risk",
@@ -649,6 +649,13 @@
           "channel": "success",
           "text": "Can someone speak to Hannah about the changes please ",
           "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1542898944004400"
+        },
+        {
+          "date": "2026-04-01",
+          "author": "Rich Hope",
+          "channel": "success",
+          "text": "Hi, our client, BNY, is looking for a client referral who can speak to our media or reputation analysis. Does anyone have someone who would be open to a 30 min call? Bonus points if they are in finance...",
+          "url": "https://signalhq.slack.com/archives/CD2EU60KA/p1775061109333259"
         }
       ]
     },
