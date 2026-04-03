@@ -1,5 +1,5 @@
 {
-  "last_synced": "2026-04-02T08:10:06Z",
+  "last_synced": "2026-04-03T08:04:26Z",
   "messages": [
     {
       "date": "2026-03-23",
@@ -28973,6 +28973,13 @@
       "text": "with ambiguous spokespeople names, it's difficult to know who's associated with which org. if this can be specified within the dropdown, it'd be super helpful",
       "url": "https://signalhq.slack.com/archives/CKZELQY5T/p1774968802970139",
       "category": "search"
+    },
+    {
+      "date": "2026-04-02",
+      "author": "Chelsea Bonhotal",
+      "text": "I\u2019m trying to create a custom logic search with multiple AND and OR groups, but it seems like I\u2019m limited to only AND or only OR groups in a given search. For this search, the client wants to see all mentions of F5 OR spokespeople mentions and have the entire search filtered by their priority reading list. I may be missing something but I can\u2019t seem to figure out how to do this in just one search without using a feeder. Are there any plans to make custom logic more flexible? In order to create the search I\u2019m aiming for, it seems like I\u2019m going to have to create two feeder searches instead.",
+      "url": "https://signalhq.slack.com/archives/CKZELQY5T/p1775154572520279",
+      "category": "content"
     }
   ]
 }
